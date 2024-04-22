@@ -1,0 +1,859 @@
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[condensed,math]{anttor}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newtheorem{eje}{Ejemplo}
+\newtheorem{teo}{Teorema}
+\newtheorem{obs}{Observación}
+\newtheorem{lem}{Lema}
+\newtheorem{pro}{Proposición}
+\newtheorem{ex}{Ejercicio}
+\newtheorem{cor}{Corolario}
+
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\kk}{\mathbb{K}}
+\newcommand{\rg}{\mathcal{R}}
+\newcommand{\kg}{\mathcal{K}}
+\newcommand{\kp}{(\mathbb{K}^p,0)}
+\newcommand{\ag}{\mathcal{A}}
+\newcommand{\oo}{\mathcal{O}_n}
+\newcommand{\mm}{\mathfrak{m}_n}
+\newcommand{\dif}{\operatorname{Dif}}
+\newcommand{\dem}{\textbf{Demostración.}}
+\newcommand{\cod}{\operatorname{cod}}
+\newcommand{\knp}{(\mathbb{K}^n \times \mathbb{K}^p)}
+\newcommand{\kn}{(\mathbb{K}^n,0)}
+\newcommand{\jku}{J^k(n,1)}
+\newcommand{\jkp}{J^k(n,p)}
+
+
+
+\begin{document}
+	\title{Teoría de singularidades}	
+	\author{Abraham Rojas}
+	\date{ }
+	
+	\maketitle
+	\tableofcontents
+	
+
+	\chapter*{Introducción}
+Uno de los problemas fundamentales es clasificar las singularidades de aplicaciones diferenciales u holomorfas, que en adelante llamaremos regulares.\\
+Solo nos interesa el comportamiento de la función en una vecindad de la singularidad.\\
+
+Comenzaremos estudiando la estructura algebraica de los gérmenes de funciones. 
+	
+%yo lo colocaría después de saber alg conmutativa y análisis real (eso viene de graudaución , creo yo)
+
+\section{Resultados de acciones de grupos en variedades}
+
+\begin{teo}
+	Si las órbitas son subvariedades, entonces los mapas $\phi_p:G \rightarrow G\cdot p$ es una sumersión. En particulpar $$ LG \cdot p = d \varphi_p (T_1 G).  $$
+\end{teo}
+
+
+
+\begin{pro}[Clasificación formas cuadráticas con $n=2$]
+Sea $f=ax^2 +2bxy + c^2$, el rango coincide con el rango del Hessiano, y del número de variables de la forma normal.
+\begin{itemize}
+\item \textbf{Simbólico.} $f=0$, rango $0$
+\item \textbf{Parabólico.} rango $1$, $b^2=ac$
+\item \textbf{Hiperbólico.} rango $2$, semi-índice $1$, $ b^2 -ac>0$.
+\item \textbf{Elíptico.} rango $2$, semi-índice $0$, $ b^2 -ac<0$. en el caso complejo, son \textbf{no degenerados}
+\end{itemize}
+\end{pro}
+
+\begin{pro}[Clasificación formas cúbicas con $n=2$]
+Sea $p= l_1 l_2 l_3$, $l_i$ forma lineal sobre $\mathbb{C}$. en $\Re$, todas son reales o una es real y las otras son conjugadas.
+\begin{itemize}
+\item \textbf{Cúbica Simbólica.} $l_i$ colineales, equivalente a $x^3$
+\item \textbf{Parabólica.} $l_1, l_2$ colineales, $l_2,l_3$ no colineales, $x^2 y$.
+\item \textbf{Cúbica no degenerada.} en $\mathbb{C}$, $l_i$ nunca colineales, $ x^2 y + y^3  $
+\item \textbf{hiperbólica.} En $\Re$, $l_i$ nunca colineales y reales, $x^2 y - y^3$.
+\item \textbf{elíptica.} en $\mathbb{R}$, $l_i$ nunca colineales, una real, $ x^2 y + y^3  $.
+\end{itemize}
+\end{pro}
+
+
+\begin{teo}[Lema de Mather]
+	Sea $G$ un grupo de Lie actuando en una variedad suave de forma .... Sea $N\subset M$ una subvariedad. Tenemos que $N$ está contenida en una órbita si y solo si 
+	\begin{enumerate}
+		\item $N$ es conexa.
+		\item $T_pN \subset LGp$ para todo $p \in N$.
+		\item $\dim G.p$ no depende de $p\in N$
+	\end{enumerate}
+\end{teo}
+
+%los ejemplos anteriores tabmie´n son consecuencia del Lema de Mather !!!!!
+
+\begin{cor}[espacio afines]
+	Sea $A$ un espacio afín, $G$ actuando tal que las ´robitas son subvariedades. Sea $W \leqslant V_A$, $x+W$ está contenida en una órbita si \begin{enumerate}
+		\item $W \hookrightarrow LGx$ 
+		\item $LG (x+ w) \simeq LGx$ para todo $w\in W$.
+	\end{enumerate}
+\end{cor}
+
+
+\begin{teo}[Transversal completa]
+	Sea $G$ actuando en $A$ afín. Sea $W \leqslant V_A$ tal que $$ LG (x+w) \simeq LGx, \; \forall x \in A , \; w \in W $$
+	Entonces
+	\begin{enumerate}
+		\item Para todo $x\in A$: $$ x+ ( LGx \cap W ) \subset Gx + \{ x+ W\} $$\\
+		\item Si $x_0 \in A $ y $T \leqslant W$ tal que $$ W \subset LGx_0 +L $$ entonces $$\forall w \in W , \; \exists g \in G \mbox{ tal que }  g \cdot (x_0 + w) = x-0 +t$$  
+	\end{enumerate}
+	
+\end{teo}
+
+\part{Clasificación de singularidades}
+
+\chapter{Funciones $(\mathbb{K}^n, 0) \rightarrow \mathbb{K}$}
+
+\section{El álgebra de gérmenes}
+%notación de gérmenes
+%geermenes de conjuntos?
+
+Definimos \begin{eqnarray*}
+\mathcal{O} _{n,p} =\{ f:(\mathbb{K}^n,0) \rightarrow \mathbb{K}^p \mbox{ regular}\}\\
+\mathcal{O}_{n,p}^{0} = \{f\in \mathcal{O}_{n,p} \;|\; f(0)=0\}.
+\end{eqnarray*}
+Denotaremos $\mathcal{O}_{n,1}$ por $\mathcal{O}_n$, que es un anillo local, con ideal maximal $ \mathcal{O}_{n,1}^0$, denotado por $\mathfrak{m}_n$ o $\mathfrak{m}$.\\ 
+Es claro que $\mathcal{O}_{n,p}$ es un $\oo$-módulo libre de rango $p$.\\
+
+
+El siguiente resultado permite encontrar generadores para $\mathfrak{m}_n$. Note la semejanza con el caso algebraico, allí eso es una consecuencia inmediata de las definiciones.
+
+\begin{teo}[Lema de Hadamard]
+Sea $f: U \times \mathbb{K}^q \rightarrow \mathbb{K}$ suave tal que $f(0,y) =0$ para todo $y\in \mathbb{K}^q$, $U\subset\mathbb{R}^n$ conjunto estrellado . Luego existen funciones $f_1, \ldots f_n: U \times \mathbb{K}^q \rightarrow \mathbb{K}$ tales que $f= x_1 f_1 + \cdots + x_n f_n$, donde $f_i (x,y) =  \int^1 _0 \partial_i f (tx, y) dt  $.
+\end{teo}%tiene otras aplicaciones interesantes
+\begin{cor}	
+Dado $k\geq 1$, tenemos que $\mathfrak{m}_n ^k $ es generado por los monomios de grado $k$ en $n$ variables. 
+\end{cor}
+
+
+
+
+Sea $\varphi : \mathcal{O}_n \rightarrow K[[x_1, \ldots x_n]]$ el mapa que asigna las series de Taylor. 
+\begin{teo}[Lema de Borel]
+	$\varphi$ es un epimorfismo $\mathbb{K}$-álgebras, cuyo núcleo es nulo en el caso complejo, y $\mathfrak{m}_n^\infty$ (funciones planas) en el caso real, que es un ideal no nulo. 
+\end{teo}
+
+\begin{cor}
+	En el caso real, $\oo$ no es un anillo noetheriano.
+\end{cor}
+\textbf{Demostración.} Supongamos que $\mm$ sea finitamente generado, como $\mm ^\infty\subset \{0\} + \mm \mm^\infty$ entonces el lema de Nakayama implica que $ \mm \subset \{0\}$, contradiciendo el teorema anterior.
+\begin{cor}
+Sea $\hat{\mm}^k$ la imagen de $\mm $ por $\phi$, tenemos que $$ \oo / \mm ^k \simeq \hat{\oo} / \hat{\mm}^k \simeq \mathbb{K}[x_1 , \cdots , x_n] _{<k}$$
+\end{cor}
+
+
+El siguiente resultado es importante en determinación finita y otros contextos
+\begin{pro}
+	Sea $M$ un $\oo-$módulo libre de rango finito y sea $N$ un submódulo. Luego $\dim _\mathbb{K} M/N$ es finita si y solo si existe un entero $k\geq 1$ tal que $\mathfrak{m} ^k M \subset N$.
+\end{pro}
+
+
+%\section{Transversalidad y Teorema de Sard }
+%
+%\begin{teo}[Lema básico de transversalidad]
+%Sea $F:N \times S\rightarrow P $ suave, sea $Q_i$ una familia finita de subvariedades de $P$. Si $F$ transversal a todos los $Q_i$ entonces existe un conunto denso de parámetros tal que $f_s$ es transversal a todos los $Q_i$.
+%\end{teo}
+%
+%%añadir estos tópicos en el libro de variedades diferencialbes
+
+
+
+
+
+El \textbf{espacio de $k-$jets} $J^k (n,p)$ es el conjunto de $p-$uplas de polinomios en $n$ variables de grado $\leq k$ con término independiente nulo.\\
+El espacio de jets posee estructura de variedad suave, de las cual hablaremos más adelante.\\
+Sea $f:U \rightarrow \mathbb{K}^p $ suave/holomorfa, definimos su $k-jet$ en $a$, $ j^k f :U \rightarrow J^k (n,1) $, como el polinomio de Taylor de orden $k$ en $a$. 
+
+\begin{cor}
+$$\mm ^k = \{f \in \oo \; | \; j^{k-1} f (0) =0\}$$
+\end{cor}
+%no es trivial y requiere la construcción del lema de haddamard
+
+
+
+
+
+
+%\begin{ex}[Nakayama fuerte]
+%Sea $I$ un ideal tal que para $x\in I$, $1+x$ es una unidad. Sea $M$ un $A-$módulo, sean $A,B \leqslant M$ tal que $A$ es finitamente generado. Si $A \subset B+ IA$ entonces $A \subset B$. 
+%\end{ex}
+
+
+
+
+\section{$\rg-$equivalencia}
+
+
+%definir codimensión extendida como la dimensión extendida.
+Definimos
+$$ \rg = \operatorname{Aut} \kk^n (0,0)$$
+cuya acción en $\mathcal{O}_n$ es $ h \cdot f = f \circ h^{-1} $.\\
+Definición de morfismos inducido... morfismos entre álgebras de funciones.\\
+
+Una familia interesante de gérmenes son los\textbf{ finitamente determinados}, aquellos cuyo $k-$jet determina su $\rg-$clase.
+
+$\rg$ y $\mathcal{O}$ no son variedades suaves. Para solucionar este problemas y también entender la determinación finita, vamos a considerar $$ \rg ^{(k)} = \{ j^k h (0) \; | \; h \in \mathcal{R} \}  = \frac{\rg}{\rg _k}, \mbox{ donde } \rg _k = \{ j^k h(0) = \operatorname{id}_{\mathbb{R}^n} \}  $$
+que es un grupo de Lie, y actúa en $ \jku $ por $ j^k h (0) \cdot j^k f(0) = j^k (f \circ h ^{-1}) (0)$.
+
+\begin{pro}
+gérmenes equivalentes tienen la misma determinanción.
+\end{pro}
+
+Para caracterizar la determinación finita necesitaremos los siguientes resultados, que son importantes por sí solos.
+
+
+%recordar sobre acciones en general y grupos de Lie
+%llamar phi mapa orbital... gneeralziar en mi libro de álgebra––––––
+
+
+
+
+%
+
+
+%$\{ j^k h(0) \; |\; h \in \mathcal{R} \}$ es un subgrupo normal de $\mathcal{R}$.
+
+%%%%%%
+
+\begin{pro}\label{tanrk}
+$$ L \mathcal{R} ^{(k)} h = \frac{\mathfrak{m}_n J f + \mathfrak{m}_n ^{k+1}}{\mathfrak{m}_n ^{k+1}} =\left\{j^{k}\left(\sum_{i=1}^{n} \frac{\partial \sigma}{\partial x_{i}} h_{i}\right) (0)  \; | \; \left(h_{1}, \ldots, h_{n}\right) \in J^{k}(n, n)\right\}  $$
+\end{pro}
+
+
+\begin{lem}[Lema de Thom-Levine]
+Sea $f\in \oo$ y $F':(\mathbb{K}^n \times \mathbb{K},0) \rightarrow (\mathbb{K}\times \mathbb{K}, 0) $ tal que $F'(x,t) = (F(x,t),t)$, $F(0,t)=0$, $F (x,0) = f(x)$. Si $\displaystyle\frac{\partial F}{\partial x}  \in  \mm \displaystyle\left\langle \frac{\partial F}{\partial x_1}, \cdots \frac{\partial F}{\partial x_n} \right\rangle \mathcal{O}_{n+1} $ entonces existe $H:(\mathbb{K}^n \times \mathbb{K},0) \rightarrow (\mathbb{K} ^n\times \mathbb{K}, 0)$ tal que $H(x,0) =x$, $H(0,t)=0$ y $F(\cdot, t) \circ H(\cdot, t) = f$ para todo $t$.
+\end{lem}
+
+
+
+\begin{lem}
+las órbitas son subavariedades regulares!
+\end{lem}
+
+\begin{teo}[Determinación finita para $\rg$] Sea $f\in \oo$.
+\begin{enumerate}
+\item Si  $\mm ^{k+1} \subset \mm^2 J(f)$ entonces $f$ es $k-$determinado (basta que $\mm^k \subset \mm J(f)$).
+\item Si $f$ es $k-$determinado entonces $\mm^{k+1}\subset \mm J(f)$
+\end{enumerate}
+\end{teo}
+
+motivación\\
+
+El \textbf{ideal Jacobiano} está definido por $$
+J(f)=\left\langle\frac{\partial f}{\partial x_{1}}, \ldots, \frac{\partial f}{\partial x_{n}}\right\rangle
+$$
+
+\begin{pro}
+\begin{enumerate}
+\item  $f\in \mm^2$ si y solo si $Df=0$ si y solo si es crítico si y solo si $J(f) \subset \mm$.
+\item $f\in \mm ^2$ es no degenerado si y solo si $Jf =\mm$.
+\item $f\in \mm^3$ si y solo si es crítico degenerado
+\end{enumerate}
+\end{pro}
+
+
+La Proposición \ref{tanrk} motiva la siguiente definición (tomando $k \rightarrow \infty$). Sea $f\in \mathcal{O}^n$. El \textbf{espacio tangente a $\mathcal{R}f$} está definido como $$
+T \mathcal{R} \cdot f= \mathfrak{m}_n J(f)= \left\{\sum_{i=1}^{n} \frac{\partial f}{\partial x_{i}} h_{i} / h_{i} \in \mathfrak{m}_{n}, i=1, \ldots, n\right\}
+$$
+Definimos la \textbf{codimensión} de $f$ por $\rg-\operatorname{cod} (f) = \dim_\mathbb{K} \mm / \mm J(f)$.
+ %La motivación es natural considerando lo anterior.\\
+\begin{cor}[Determinación finita y codimensión]
+	Un germen en $\oo$ es finitamente determinado si y solo su codimensión es finita.
+\end{cor}
+
+Existe otra noción de espacio tangente, la de \textbf{espacio tangente extendido}... motivación. Más adelante daremos otra descripción de él.\\
+Definimos la \textbf{codimensión extendida} por $\rg_e\cod f = \dim _{\mathbb{K}} \oo / J(f)$, también llamada \textbf{número de Milnor} también denotadad por$\mu(f)$. Esta será la que usaremos en adelante, cuando hablemos de codimensión.
+
+\begin{pro}
+\begin{enumerate}
+\item Sea $f\in \mm$, $\rg-\cod f$ es finita si y solo si $\mu(f)$ lo es, si y solo si $\mm^k \subset J f$.
+\item Sea $f\in \mm$ tal que $0< \rg-\cod f < \infty$. Entonces $\rg - \cod f = \mu (f) + n -1$.
+\item $\mu (f)=0$ si y solo si es no singular, $\mu (f)=1$ si y solo si es crítico no degenerado.
+\end{enumerate}
+\end{pro}
+
+
+
+\begin{ex}
+Si $n \geq 2$ y $f\in \mm^2$ es independiente de una de su variables entonces tiene codimensión infinita.
+\end{ex}
+
+%LOS ITALIANOS DEFINEN CODIMENSION muy diferente (tampoco es la usual), PERO MARCELO Y OTROS USAN EL NUMERO DE MILNOR
+
+\begin{teo}[Invarianza]
+La codimensión es un $\rg-$invariante.
+\end{teo}
+
+
+
+
+%Definimos el \textbf{espacio tangente extendido} como $L\mathcal{R}_e f =J(f)$.
+%El \textbf{número de Milnor} de $f$ es $\mathcal{R}_e-$cod$(f)$, denotado por $\mu (f)$. En la parte II mostraremos otras interpretaciones de este número, y su importancia.\\
+%Por la pro..., tenemso que $\mathbb{R}-\operatorname{cod}(f)$ es finita si y solo si existe $k>0$ tal que $J(f) \subset \mathfrak{m}_n^k$.\\
+%
+%Conexión entre la acción y la topología de la singularidad.
+%
+%\begin{teo}
+%Sea $f\in \mathfrak{m}_n$ de $\mathbb{R}-\operatorname{cod}(f)$ finita. Entonces es un singularidad aislada.
+%\end{teo}
+%
+%\begin{pro}
+%En el caso complejo, vale la recíproca del teorema anterior.
+%\end{pro}
+%
+%\begin{eje}
+%contraejemplos
+%\end{eje}
+%
+%\begin{pro}Sea $f \in \mathfrak{m}_n$ tal que $0< \mathcal{R}-\operatorname{codim}(f) < \infty$. Luego
+%$$
+%\mathcal{R}-\operatorname{codim}(f)=\mathcal{R}_{e}-\operatorname{codim}(f)+n-1
+%$$
+%\end{pro}
+
+
+
+
+
+
+
+
+
+
+\begin{teo}[Codimensión y Topología]
+Si la codimensión es finita entonces la singularidad es aislada. La recíproca vale en el caso complejo.
+\end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Las catástrofes elementales}
+
+historia...\\
+Thom clasificó las singularidades hasta codimensión $5$, llamadas \textbf{catástrofes elementales}.\\
+Vamos clasificar las singularidades según codimensión, posibles valores del corango.\\
+
+%estamos considerando funciones con imagen 0
+
+% no se puede clasficar finitamente para codimensiones mayores
+
+\begin{pro}
+$\mu(f)= 0$ si y solo si $f$ es un sumersión. En particular, es equivalente a una proyección.
+\end{pro}
+
+
+
+\textbf{Clasificación de formas cuadráticas}. El rango es invariante lineal, pero el índcie puede cambiar, para eso definimos el semi-índice. Sale con álgebra lineal o aplicando el Lema de Mather. Cuando $\mathbb{K}= \mathbb{C}$ entonces el índice es igual al rango. \\ % el índice es el número de positivos
+
+
+
+Sea $f \in \mm ^2$. Es \textbf{no degenerada} si la matriz hessiana (en cero) es no singular, caso contrario es \textbf{degenerado}. Definimos el \textbf{corango} de $f$ como $\operatorname{cr} f = n- \operatorname{rk} \operatorname{Hess} f $. Definimos el \textbf{índice} de $f$ como el índice de su Hessiana.
+
+
+
+\begin{teo}[Lema de Morse]
+$\cod f =1$ si y solo si es no degenerada. En ese caso, si $s$ es el índice de $f$, entonces es equivalente a $$ x_1 ^2  + \cdots + x_s ^2 -x _{s+1} - \cdots - x_{n}^2 $$
+\end{teo}
+% 2 determinado +  clasif formas cuadráticas
+
+
+\begin{teo}[Lema de Separación]
+Si $f$ es degenerada (siempre trabajamos con gérmenes en el origen) de corango $c$ entonces existe $g\in \mathfrak{m}_c ^3$, único por $\mathcal{R}-$equivalencia y $\mu(f)= \mu (g)$ojn     , tal que $f$ es equivalente a $$g(x_1, \ldots, x_c) \pm x_{c+1 }^2 + \ldots + \pm x^2_n.$$
+\end{teo}
+
+
+\begin{pro}[Cota para el corango]
+	Sea $f\in \mm ^2$. Sea $k= \operatorname{cor} f$ Entonces $ \mu (f) \geq \frac{1}{2} k (k+1) +1.$
+\end{pro}
+
+Por tanto, analizaremos por ahora hasta corango $2$.\\
+%esto también opcional
+
+
+
+
+\begin{teo}[Singularidades $A_k$]
+Sea $f\in \mm^2$ de corango $1$ y $\mu (f)=k$. Entonces $f$ es equivalente a $$  \pm x^{k+1}  \pm x_2^2 + \pm \cdots \pm x_n^2 .$$
+\end{teo}
+\dem Separación. Tenemos $g: (\mathbb{K},0) \rightarrow(\mathbb{K},0)$, entonces $J(g)= x^k$... \\
+En el caso complejo, $g$ es equivalente a $x^{k+1}$. En el caso real, si $k$ es par entonces $Ak$ es equivalente a $A_{-k}$. Si $K$ es impar, lo contrario.\\
+
+Para el caso corango $2$, haremos inducción sobre el grado de los jets, usando el método de la transversal.\\ %explicar mejor el algoritmo.
+Sea $f$, $W = H^{k+1} (n,1) = \frac{\mm^k}{\mm^{k+1}}$, $A = j^k (f) + W \subset J^{k+1}(n+1)$. Así, vamos a buscar $T\leqslant W$ tal que $L \rg f + T = j^k (f) + W$ (note que aquí sí es igualdad). 
+
+\begin{pro}[Transversal completa en $J^{k+1}\rg$]
+Sea Sean $G_1, \ldots G_r \in H^{l+1}(n,1)$ que cumplen $$  \mm ^2 J(f) + \mathbb{R} \{G_1 , \ldots , G_r\}  + \mm ^{k+2} \supset \mm ^{k+1} $$ entonces todo $g \in J^{k+1}(n,1)$ con $j^k g = j^k f$ es $\rg_1^{(k+1)}$-equivalente a algún $ f+ \sum _{i=1}^r  u_i G_i $
+\end{pro}
+
+
+
+
+\begin{pro}[Singularidades $D_k$]
+Si $f\in \mm^3$ de codimensión $k -1 \geq 3$y $j^3 g$ es no degenerada o parabólica. Entonces es equivalente a $$xy^2 \pm y^{k-1} $$
+\end{pro}
+
+
+
+Falta el caso simbólico, de codimensión mayor que 5.\\
+Podemos dar por ahora la clasificación de Thom hasta codimensiçon 5.\\
+
+Antes de continuar, debemos tener en cuenta que una clasificación finita no siempre es posible. Esto envuelve la noción de germen simple, que será explicada en el próximo capítulo.\\
+
+
+
+
+%obviamente, la catastrofes elementales no son gérmenes estables, codimensión no nula...
+
+%ade singularities, conexiones con álgebra de lie sem simples
+
+
+
+
+
+
+
+\chapter{$\ag$ vs. $\kg$ equivalencia}
+Dejaremos de enfocarnos en funciones, y consideraremos mapas más generales.\\
+
+Diremos que dos mapas son a equivalente cuando...\\
+Definir L equivalencia también\\
+
+Como en el capítulo pasado, nos gustaría definir la codimensión, mostrar que es un invariante, y encontrar criterios de determinación finita. Además, noción de espacio tangente seguirá siendo. Por otro lado, podemos daruna motivación más geométrica que la de truncamientos \\
+
+Imitando la intuición de la teoría de variedades suaves, usaremos despliegues para denotar caminos en el espacio de funciones. Recordemos que la acción está siendo aplicada, en principio, en $\mm$\\
+En realidad, solamente lograremos clasificar gérmenes estables, i.e., de codimensión $0$, para $n,p$ pequeños.\\
+
+
+
+\section{Despliegues}
+
+Los despliegues generalizan la idea de caminos en el espacio de funciones.\\
+
+Sea $f: (\mathbb{K}^n, 0) \rightarrow (\mathbb{K}^p)$.
+Un \textbf{despliegue a $d-$parámetros} es un germen $F':(\mathbb{K}^n \times \mathbb{K}^d, 0) \rightarrow (\mathbb{K}^p, \mathbb{K}^d)$.
+
+\begin{eje}
+	teorema de Thom-Levine y otros (germen constante)... espacios tangentes, aunque dejaremos esa construcción para después, nuestra principal motivación fueron las acciones truncadas.
+\end{eje}
+
+Dos despliegues a $r-$parámetros $F_1$, $F_2$ de un germen $f: (\mathbb{R}^n)\rightarrow (\mathbb{R}^p)$ son \textbf{equivalentes} si existen despliegues $I_n$, $I_p$ de de los mapas identidad en $\mathbb{R}^n$, $\mathbb{R}^p$, respectivamente, tal que $$ F_2 = I_p ^{-1} \circ F_1 \circ I_{n}$$
+es decir, son $\ag-$equivalentes. Note que $I_n$ (y deformaciones asociadas) son gérmenes invertibles, similarmente con $I_p$.\\
+Un despliegue es trivial si es equivalente al germen constante. Un germen es \textbf{estable} si todo despliegue es $\mathcal{A}-$trivial.\\
+
+
+
+
+\begin{eje}
+	ejemplos de gérmenes estables y no estables
+\end{eje}
+
+Despliegue inducido, es como un cambio de parámetros.\\
+Despliegue versal, cualquier otro despliegue es equivalente a un despliegue inducido.\\
+Despliegue isomorfos si es equivalente a un despliegue inducido por un difeomorfismo.
+
+\begin{teo}[Versalidad y transversalidad]
+Un \textbf{despliegue $F$} a $d$-parámetros es versal si y solo si \textbf{transversal}, i.e., $$ L \ag _e f_0 + \langle \stackrel{\cdot}{F}_1, \ldots , \stackrel{\cdot}{F}_d \rangle _ \mathbb{R} = \mathcal{O}_{n,p} $$
+o sea, si las derivadas generan el cotangente....
+\end{teo}
+
+
+\begin{cor}[Versalidad y codimensión]
+Un germen tiene codimensión finita si y solo si admite un despliegue versal, en ese caso, el número de parámetro de una deformación miniversal es la codimensión extendida.
+\end{cor}
+
+
+
+\subsection{Conjunto de bifurcación}
+
+El \textbf{conjunto de catástroges} de un despliegue es $$ C(F) = \{ (x,u) \in (\mathbb{K}^n \times \mathbb{K}^d ,0 ) \; | \; DF (x,u) \mbox{ es singular }  \} $$
+El \textbf{conjunto de bifurcación} es $$ B(F) = \Sigma (F) = \{ u \in (\mathbb{K^n},0) \; |\; \exists (x,u) \in C(F), \; \operatorname{Hess} (f) \mbox{ es singular } \} $$
+el discrimiante es la imagen el conjunto de catástrofes. 
+\begin{pro}
+despliegues versales con el mismo número de parámetros tienen todo isomorfo
+\end{pro}
+
+
+\subsection{Espacio tangente}
+
+
+Definimos el \textbf{espacio tangente} a $f$ por $$ L\ag f = \{ \left. \frac{d}{dt} \psi_{t} \circ f \circ \varphi_{t}\right\vert_{ t=0} : \phi_t,\varphi_{t} \mbox{ deformaciones de las identidades tq. } \psi_t (0)=0, \; \varphi_{t} (0)=0 , \; \forall t  \} $$
+
+%sus elementos son los centros de organización de los depliegues derivados (germenes en el origen)
+
+Una definición útil será la de \textbf{espacio tangente extendido} a $f$, dada por $$ L\ag_e f = \{ \left. \frac{d}{dt} \psi_{t} \circ f \circ \varphi_{t}\right\vert_{ t=0} : \phi_t,\varphi_{t} \mbox{ deformaciones de las identidades} \} $$
+
+Para dar una definición equivalente de espacio tangente, que será mucho más calculabe, usaremos las siguientes notaciones
+\begin{itemize}
+	\item $\theta_n$: gérmenes de campos vectoriales sobre $\mathbb{K}^n$ en $0$, es un $\oo$-módulo de rango $n$.
+	\item $\theta(f)$: gérmenes de campos vectoriales a lo largo de $f$, es un $\oo$-módulo libre, y también un $\mathcal{O}_p$-móudulo libre usando $f^*$.
+	\item $tf:\theta_n \rightarrow \theta(f)$ dada por $\xi \mapsto df \circ \xi$, morfismo de $\oo$-módulos
+	\item $wf : \theta _p \rightarrow \theta(f)$ dada por $ \eta \mapsto \eta \circ f$, morfismo de $\mathcal{O}_p-$módulos
+\end{itemize}
+
+
+
+\begin{lem}
+$$
+\left.\frac{d}{d t}\left(\psi_{t} \circ f \circ \varphi_{t}^{-1}\right)\right|_{t=0}=d f \circ\left(\left.\frac{d \varphi_{t}^{-1}}{d t}\right|_{t=0}\right)+\left(\left.\frac{d \psi_{t}}{d t}\right|_{t=0}\right) \circ f
+$$
+\end{lem}
+
+
+\begin{teo}[espacio tangente]
+$$ L \ag f = tf (\mm\theta_n)  + \omega f (\mathfrak{m}_p \theta_p ) = \mm J(f) + \{ \eta \circ f \;|  \; \eta \in \mathfrak{m}_p  \mathcal{O}_{p,p}\} $$
+$$ L \ag_e f = tf (\theta_n)  + \omega f (\theta_p ) = J(f)\oo + \{ \eta \circ f \;|  \; \eta \in \mathcal{O}_{p,p}\} $$
+\end{teo}
+Note que tenemos una combinación de estructuras modulares.\\
+El concepto de codimensión significa cuanto le falta a un espacio para ser igual al total. En nuestro caso, el espacio total será el espacio tangente a $f$ en el espacio de funciones, que identificaremos con el conjunto $ \mm \theta (f) $. 
+En el caso extendido, tiene sentido considerar el espacio de todas las funciones, no solo de las que fijan el origen.\\
+
+Por tanto, las codimensiones serán definidas por $$ \ag-\operatorname{cod} (f) = \dim _{\mathbb{K}} \frac{\mm\mathcal{O}_{n,p}}{L\ag f} \quad  \ag_e -\operatorname{cod} (f) = \dim _{\mathbb{K}} \frac{\mathcal{O}_{n,p}}{L\ag_e f} $$
+
+
+
+
+\section{Equivalencia de contacto}
+
+Dados dos gérmenes $f_1, f_2: \kn \rightarrow \kp$, sabemos que sus gráficos son subvariedades de $\mathbb{K}^n\times \mathbb{K}^p$. La $\kg$-equivalencia los relaciona si estos gráficos tienen el mismo \textit{tipo de contacto} en $(0,0)$ con el eje $\mathbb{K}^n$. En este caso, buscamos que estas intersecciones sean isomorfas.\\
+la ventaja de la $\kg$-equivalencia es que es mucho más fácil de verificar. Además está relacionada fuertemente con la $\ag-$equivalencia, cuando consideramos relación entre germenes y despliegues, próximo capítulo.\\
+
+
+El grupo de contacto es definido por 
+$$ \mathcal{K} = \{ (h,H) \in \dif \kn \times \dif \knp \;| \; H(x,y) = (h(x), \theta (x,y)), \; \theta (x,0)=0 \} $$
+que actúa en $f: \kn \rightarrow \kp$ por $$ (h,H) \cdot f (x)= \theta (h^{-1}(x), f(h^{-1} (x))) $$
+
+%dibujar /  mostrar que $A$.equi es un caso particular
+
+Un caso particular es el grupo $\mathcal{C}$, tomando $h= \operatorname{id}_{\kn}$. 
+
+\begin{pro}
+$\kg$ es el producto semi-directo de $\rg$ y $\ag$.
+\end{pro}
+
+\begin{pro}[criterio algebraico de equivalencia]
+Sean $ f,g \in \mathcal{O}_{n,p} ^0$. Son equivalentes
+\begin{enumerate}
+\item $f,g$ son $\mathcal{C}-$equivalentes
+\item Los ideales $\langle f_1, \ldots, f_p  \rangle = \langle g_1, \ldots, g_p  \rangle$ en $\oo$.
+\item Existe una matriz $(u_{ij})\in \oo ^{p\times p} $  tal que $f_i= \sum u_{ij} g_j$. 
+\end{enumerate}
+\end{pro} 
+%demostración en Gibson 146
+
+
+\begin{eje}
+K equi pero no A equi
+\end{eje}
+
+\begin{teo}[criterio algebraico de equivalencia]
+Dos gérmenes son $\kg$-equivalentes si y solo sus $\langle f_1, \ldots, f_p  \rangle = \langle g_1, \ldots, g_p  \rangle$ son isomorfos inducidos.
+\end{teo}
+
+Como antes, podemos definir los espacios tangentes y la codimensiones, $\mathcal{O}_n-$módulo.
+$$ L \mathcal{K} f = tf (\mm) + f^* \mathfrak{m}_P\theta(f) = J(f) \mm + I(f) \mathcal{O}_{n,p}  $$
+$$ L \mathcal{K}_e f = tf (\oo) + f^* \mathfrak{m}_P\theta(f) = J(f)  + I(f) \mathcal{O}_{n,p}  $$
+Todos vistos como submódulos de $\mathcal{O}_{n,p}$
+%\begin{pro}
+%Si $\mm ^k \theta(f) \subset L\kg f$ para algún $k$ entonces la $\kg-$codimsión es finita.
+%\end{pro}
+
+% no encuentro la demostración!! es necesaria?? SI, para la exsitencia de despliegues transversales.
+
+
+
+\begin{teo}
+La $\kg$-codimensión es $\kg-$invariante.
+\end{teo}
+
+
+%en dimensión finita 
+
+%definir grupos de mather
+
+
+\begin{teo}
+Un despliegue es $\kg$-versal si y solo si es $\kg$-transversal, si y solo si la $\mathcal{K}-$codimensión es finita
+\end{teo}
+
+%no sé donde está la demostración
+\begin{pro}
+Dos deformaciones miniversales son isomorfas.
+\end{pro}
+\dem mostrar que el cambio de base entre ambos es un difeo.\\
+
+
+A continuación mostraremos un resultado fácil y fundamental. 
+
+\begin{pro}
+	Todo germen es $F:\kn \rightarrow\kp$ de rango $r$ es $\re$-equivalente al despliegue a $r-$parámetros de un germen de rango $0$.  
+\end{pro}
+
+%trivial, solo cambio de coordenadas
+
+Por tanto, en la $\ag$-clasificación de gérmenes, podemos restringirnos a despliegues.
+
+\begin{pro}
+si son despliegues son $\ag-$equivalentes entonces los centros son $\kg-$equivalentes.
+\end{pro}
+
+
+
+
+
+
+
+\chapter{Estabilidad}
+
+
+Hay varias maneras de entendar la estabilidad: topologicamanete, con despliegues, e infinitesimalmente.
+
+Sea $F': (\mathbb{K}^n \times \times \mathbb{K}^r) \rightarrow (\mathbb{K}^p \times \times \mathbb{K}^r)  $ un despliegue a $r-$parámetros. Vamos anlaizar la correspondencia $F \mapsto F_0$.
+
+\begin{teo}[fundamental]
+	Existe una biyección entre las clases de $\ag$-equivalencia de gérmenes estables $(\mathbb{K}^r \times \mathbb{K}^n) \rightarrow (\mathbb{K}^r \times \mathbb{K}^p)$ de rango $r$ y las clases de $\kg-$equivalencia de rango $0$ y $\kg _e$-codimensión $\leq r+p$
+\end{teo}
+
+\section{Estabilidad infinitesimal}
+Un germen es dicho $\mathcal{G}$-\textbf{infinitesimalmente estable} si la $\mathcal{G}_e$-codimensión es  $0$.
+ %comentario en cada capítulo sobre el camion que seguiremos, o sino en la introducción...
+\begin{teo}
+Estable (por despliegues) es equivalente a infinitesimalmente estable.
+\end{teo}
+
+
+%muy largo, se aplica Thomo Levine
+
+
+
+
+
+%uno de los resultados envolvidos no está demostrado en Gibson... parece largo.
+
+Así, nos enfocaremos en hallar las clases de $\kg-$equivalencia gérmenes de rango $0$ hasta cierta $\kg_e $codimensión.\\
+
+Podemos descomponer este problema en otros más fáciles utilizando la \textit{estratificación} (partición) de Thom-Boardman, que utiliza la topología del espacio de funciones, que finalmente comenzaremos a utilizar, en lugar de huir de ella.
+
+
+%esto sirve para probar estabilidad de gérmenes, supongo!!
+%toerema de Sard, transversalidad de Thom
+
+
+\section{La Topología de Whitney}
+
+Nos gustaría que el conjunto de aplicaciones estables sea abierto y denso. Seremos globales por un rato.\\
+
+Escoja una métrica $d$ en $J^k(n,p)$ (que es una variedad suave). La \textbf{topología $C^k$ de Whitney} tiene como base $$ V(f, \delta) = \{ g\in C^k \; |\; d (j^k g (x) - j^k f(x) ) < \delta (x), \; \forall x\in \mathbb{K} \} $$
+donde $\delta$ es una función continua y positiva.\\
+la \textbf{topología $C^\infty$ de Whitney} tiene como base la unión de todos los abiertos de las topologías $C^k$.
+
+\begin{obs}
+	La topologia de Whitney es Baire no metrizable.\\
+	El espacio de jets entre dos variedades en un fibrado sobre cada variedad. Esto define la estructura suave de $J^k(n,p)$, la topología coincide con la euclidiana... aunque eso no importa.
+\end{obs}
+
+
+\begin{pro}
+	\begin{enumerate}
+		\item Considerando la topologia de Whitney $j^k : C^\infty(n,p) \rightarrow C^\infty (\mathbb{R}^n,  J^k (n,p)) $ es continua.
+		\item $\phi_*: C^\infty (n,p) \rightarrow (n,q)$, con $\phi : \mathbb{R}^p \rightarrow \mathbb{R}^q$ (covariante) es continua.
+		\item Si $\phi \in \operatorname{Dif} (\mathbb{R}^n)$ y $\psi \in C^\infty (n,n)$ entonces $f \mapsto \psi \circ f \circ \phi^{-1}$ es continua. Si $\psi$ es un difeomorfismo, entonces es un homeomorfismo.
+	\end{enumerate}
+\end{pro}
+
+
+
+
+\begin{teo}[Transversalidad de Thom]
+	Sean $Q_1 \cdots Q_p$ subvariedades suaves de $J^k(n,p)$. Entonces el conjunto de las aplicaciones $f$ en $C^\infty(n,p)$ tales que $j^k (f)$ es transversal a todos los $Q_i$ es denso.
+\end{teo}
+
+
+
+Un mapa $f \in C^\infty (n,p)$ es \textbf{globalmente estable} si existe una vecindad de $f$ contenida en una única $\dif n \times \dif p-$órbita. En realidad, dicha órbita será abierta.
+
+\begin{teo}
+$f$ propio. Son equivalentes.
+\begin{enumerate}
+\item globalmente estable.
+\item Para todo $p $, $S \subset f^{-1}(p)$, $f: ( , S) \rightarrow (, p)$ es estable.
+\end{enumerate}
+\end{teo}
+
+%Mather toerema
+
+
+\subsection{Singularidades de primer orden}
+
+Sea $f: \mathbb{R}^n\rightarrow \Re ^p $, definimos el conjunto de singularidades de primer orden $$ \Sigma ^i (f) =\{ x \in \Re ^n \; |\; \dim \ker df (x) =i\}. $$
+
+También definimos $$ \Sigma ^i = \{  \sigma \in J^1 (n,p) \; | \; \dim \ker j^1 \sigma = i \} $$
+Note que $\Sigma ^i (f) = j^{-1} (f) (\Sigma ^ i ) $, por tanto es una subvariedad.\\
+
+\begin{pro}
+$\cod \Sigma ^i = i (p-n+i)$ en $J^1(n,p)$. 
+\end{pro}
+
+\dem aplicar lema de álgebra lineal y luego transversalidad de Thom.\\
+
+\begin{cor}
+El conjunto de aplicaciones con $1-$jet transversal a todos los $\sigma i$ es denso, para ese conjunto $\cod \sigma ^i (f) = i (|p-n|+i)$
+\end{cor}
+
+
+
+
+\subsection{Singularidades de Thom-Boardman}
+
+Definir símobolo de Boardman
+
+
+
+
+
+
+
+\section{Gérmenes simples}
+
+Una singularidad finitamente determinada $f\in \mm \mathcal{O}_{n,p}$ es \textbf{simple} si para todo $k$ grande existe un vecindad $V$ de $j^k(f)$ en $J^k (n,p)$ que contiene un número finito de órbitas de la acción de $ J^k \mathcal{G} $ en $ J^k (n,p)$.\\
+También se puede definir usando deformaciones y la topología del espacio de funciones.
+\begin{lem}
+es suficiente tomar una deformación versal
+\end{lem}
+Gérmenes no simples... comentarios.... ver en las notas... también caso Arnold
+
+\begin{pro}
+A simple equivale K simple, equivale R simples
+\end{pro}
+ %no encuentor la demostración
+
+
+
+
+
+
+\section{Algunos gérmenes estables}
+
+Vamos a clasificar gérmenes del plano en el plano.
+
+\begin{teo}[Whitney]
+Las únicas singularidades aisladas que aparecen en los discriminantes de una aplicación estable del plano en el plano son cúspides y dobleces transversales.
+\end{teo}
+
+
+
+
+
+\chapter{Falso epílogo}
+
+Determinación finita.\\
+Variedades.
+
+
+
+\part{Topología de las singularidades}
+
+\chapter{La fibración de Milnor}
+
+\begin{teo}
+Existe un vecindad puntuada del origen tal que $f$ es una fibración, con fibra homotópica al bouquet de esferas (de codimensión 1 por regularidad), de cantidad kgula al número de milnor.
+\end{teo}
+	
+\chapter{Cálculo número de Milnor y  Tjurina}
+Poliedro de Newton	
+
+\begin{pro}
+
+\end{pro}
+
+	
+\chapter{Estratificaciones}
+
+cómo varían los estratos con deformaciones (poliedro de Newton)
+
+	
+	
+	
+\part{Casos particulares y generalizaciones}	
+	
+\chapter{Intersección completa}	
+
+
+
+
+\section{Singularidades de esquemas afines}
+
+\section{Cohen Macaulay}
+
+\section{Gorenstein}
+
+
+\chapter{Variedades determinantales}
+	
+\end{document}
+
+
+
+
+\chapter{Determinación finita}
+
+El concepto de determinación finita es interesante por sí mismo, además está relacionada con la codimensión finita.
+
+
+Definición $\mathcal{G}-$finito. 
+
+
+\section{Criterios}
+
+\begin{teo}[Codimensión y determinación finita]
+	Sea $f: (\kk ^n, 0 ) \rightarrow (\mathbb{K}^p,0)$. Son equivalentes:
+	\begin{enumerate}
+		\item $f$ es $\mathcal{G}$-finito.
+		\item existe $r$ tal que $\mathfrak{m}^{r+1} \theta _f$, 
+		\item $\mathcal{G}-\operatorname{cod}(f) < \infty$
+		\item $\mathcal{G}_e-\operatorname{cod}(f) < \infty$.
+	\end{enumerate}
+\end{teo}
+
+\begin{teo}[específico]
+	\begin{enumerate}
+		\item Si $f$ es $r-\mathcal{G}-$finito, entonces $\mathfrak{m}_n ^{r+1} \subset L \mathcal{G} \cdot f $.
+		\item Para $\mathcal{G}= \mathcal{L}, \mathcal{A}$, si $ \mathfrak{m}_n ^{r+1}$ entonces $f$ es $(2r+1)-\mathcal{G}-$finito.
+		Para $\mathcal{G}= \mathcal{L}, \mathcal{A}$, si $ \mathfrak{m}_n ^{r+1}$ entonces $f$ es $(r+1)-\mathcal{G}-$finito.
+	\end{enumerate}
+\end{teo}
+
+%usamos un resultado de comutaiva que relaciona codimiensión con completamento
+
+
+\section{Caso particular $\rg$}
+
+\begin{pro}[Lema de Thom-Levine]
+	
+\end{pro}
+
+
+
+%cobordismo
+%ya debería saber toería de morse 
+

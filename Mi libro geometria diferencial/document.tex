@@ -1,0 +1,175 @@
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newtheorem{eje}{Ejemplo}
+\newtheorem{teo}{Teorema}
+\newtheorem{obs}{Observación}
+\newtheorem{lem}{Lema}
+\newtheorem{pro}{Proposición}
+\newtheorem{ex}{Ejercicio}
+\newtheorem{cor}{Corolario}
+
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\kk}{\mathbb{K}}
+\newcommand{\rg}{\mathcal{R}}
+\newcommand{\kg}{\mathcal{K}}
+\newcommand{\ag}{\mathcal{A}}
+\newcommand{\og}{$\mathcal{O}$}
+
+\newcommand{\jku}{J^k(n,1)}
+\newcommand{\jkp}{J^k(n,p)}
+
+
+
+\begin{document}
+	\title{Geometría Diferencial}	
+	\author{Abraham Rojas}
+	\date{ }
+	
+	\maketitle
+	\tableofcontents
+	
+	\part{Basics}
+	\chapter{Introducción}
+
+\chapter{Variedades diferenciales}
+
+%comentario sobre estructuras exóticas
+
+%cocientes de variedades
+Sea $M$ un espacio topológico Hausdorff y segundo contable.\\
+
+$M$ es una \textbf{variedad topológica de dimensión $n$}  si existe un \textbf{atlas}, que es una colección $\mathfrak{A}$ de pares $(U_i, \varphi_i )_{i\in I}$, donde
+\begin{enumerate}
+	\item $\{U_i\}$ es un cubrimiento abierto de $M$,
+	\item para cada $i\in I$, $\varphi_i$ es un homeomorfismo entre $U_i$ y un abierto de $\re^n $.
+\end{enumerate}
+Los elementos de un atlas son llamados \textbf{cartas}.\\
+
+$M$ es una \textbf{variedad diferenciable} si, para cada $i,j\in I$, $$\varphi_i \circ \varphi_j^{-1} | _{ \varphi_j(U_i \cap U_j)}  \mbox{ es de clase } C^\infty .$$ 
+
+Un mapa diferenciable es una función continua $f:M \rightarrow N$ entre variedades suaves tal que, para todo par de cartas $(U,\varphi)$ y $(V, \psi)$ de $M$ y $N$, respectivamente, tenemos que $$ \psi \circ  f \circ \varphi ^{-1} |_{ f^{-1}(V) \cap U }  \mbox{ es de clase } C^\infty.$$
+
+\begin{pro}
+	Las variedades diferenciables forman una categoría, tomando como morfismos los mapas diferenciables.
+\end{pro}
+
+Los isomorfismos en esta categoria son llamados \textbf{difeomorfismos}.
+
+\begin{eje}
+	
+\end{eje}
+
+Una variedad compleja de dimensión (compleja) $n$ 
+
+
+
+
+
+\chapter{Espacio tangente}
+
+\section{Campos vectoriales}
+
+%flujos y campos completos
+
+
+
+
+\chapter{Algunas aplicaciones}
+
+\section{Subvariedades}
+
+\section{Grupos y Álgebras de Lie}
+
+
+\section{Propiedades de las variedades}
+
+\subsection{Orientación}
+
+\subsection{Partición de la unidad}
+
+\subsection{Preludios...}
+
+
+
+\chapter{Formas diferenciales}
+
+\section{Derivada (exterior)}
+
+\section{Caso complejo}
+
+\section{El Complejo de De Rham}
+%invariancia por homotopia
+
+%teorema de Rham en libro de topologia algebraica
+
+
+
+\subsection{La sequencia de Mayer-Vietoris}
+
+
+
+
+
+
+\chapter{Integración}
+
+\section{Teorema de Stokes}
+
+
+\section{Dualidad de Poincaré}
+
+
+\section{Género}
+
+\section{Teoría de grado en variedades}
+
+
+
+
+
+
+
+
+	
+\part{Geometría Riemanniana y simpléctica}
+	
+	
+	
+	
+	
+\chapter{Variedades tóricas}	
+
+
+\chapter{Kähler package}
+
+
+\chapter{Categoría de Fukaya}
+
+
+	
+\part{Clases Características}
+
+
+
+
+
+	
+\end{document}
+
+
+
+
+
+
+
+
+%cobordismo
+%ya debería saber toería de morse 
+

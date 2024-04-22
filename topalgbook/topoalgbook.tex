@@ -1,0 +1,179 @@
+\documentclass[12pt]{book}
+\usepackage{gfsartemisia-euler}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{tgbonum}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newtheorem{eje}{Ejemplo}
+\newtheorem{teo}{Teorema}
+\newtheorem{obs}{Observación}
+\newtheorem{lem}{Lema}
+\newtheorem{pro}{Proposición}
+\newtheorem{ex}{Ejercicio}
+\newtheorem{cor}{Corolario}
+\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\re}{\mathbb{R}}
+\begin{document}
+\large	
+	\title{Topología Algebraica}	
+	\author{Abraham Rojas}
+	\date{2023}
+	
+	\maketitle
+	\tableofcontents
+	\part{(Co)homologías}
+
+	%estructura del libro 
+
+\chapter{Algunos conceptos topológicos}
+
+El término mapa denota función continua. $I$ denotará el intervalo $[0,1]$. Términos como retracción, cocientes, serán pensados en la categoria de espacio topológicos.
+
+Dado un mapa $f: X \rightarrow Y$, el \textbf{cilindro} de $f$ es el cociente de $ (X\times I )  \bigsqcup Y $, identificando $(x,1)$ con $f(x)$
+
+
+\section{Homotopías}
+
+Una \textbf{homotopía} entre dos espacio $X$ e $Y$ es una familia de mapas $f_t: X \rightarrow Y$ con $t\in I$, tal que $F: X \times I \rightarrow Y$ definida por $F(x,t ) = f_t (x)$ es continuo. Diremos que $f_0 $ y $f_1$ son homotópicos, y escribiremos $f_0 \simeq f_1$.\\
+
+Un \textbf{retrato por deformación} de $X$ es un subespacio $A$ es una homotopía entre $Id_X$ y una retracción de $X$ en $A$.\\
+Una homotopía $f_t : X\rightarrow Y$ que se restringe a la identidad en $A$ es una \textbf{homotopía relativa} a $A$.\\
+
+Un mapa $f: X \rightarrow Y$ es una \textbf{equivalencia homotópica} si existe otro mapa $g: Y \rightarrow X$ tal que $fg \simeq Id$ y  $gf \simeq Id$, en este caso, $X$ e $Y$ son \textbf{homotópicamente equivalentes} (o tiene el mismo \textbf{tipo de homotopía}), denotaremos $X \simeq Y$.\\
+Un espacio con la clase de homotopía de un punto es llamado \textbf{contráctil}. Equivalentemente, su mapa identidad es homotópica a un mapa constante (hacia algún punto).
+Note que un retrato por deformación es una equivalencia homotópica.
+
+\begin{eje}
+\begin{enumerate}
+\item La cinta de Möbius se retrae por deformación a su círculo interior. 
+\item Consideremos una hoja de papel con dos hoyos, esta se retrae a lo siguiente... pag. 2, por tanto estas figuras son homotópicamente equivalentes, pero no son retratos de deformación entre sí. \textit{Esto puede expresarse en función de cilindros}.
+\item Se puede retraer una X gorda en una $X$ fina y luego retraer a un punto. Observe que los caminos pueden cruzarse, a diferencia de los ejemplos anteriores. 
+\end{enumerate}
+\end{eje}
+
+\begin{ex}
+Sea $f: X \rightarrow Y$ un mapa, $M_f$ se retrae por deformación a $Y$, lo Cuál generaliza los ejemplos anteriores. 
+\end{ex}
+
+
+\section{Complejos simpliciales }
+
+
+\section{Complejos CW}
+
+\begin{eje}
+Construir un toro partir de un cuadrado, y generalizar para un polígono regular de $4g$ lados paar obtener superficies orientables.
+\end{eje}
+
+
+son construido de forma inductiva
+\begin{enumerate}
+\item $X^0$ es un conjunto discreto, sus puntos son las $0-$células del complejo.
+\item Inductivamente, construiremos el $n$-esqueleto $X^n$ a partir de $X^{n-1}$, adjuntando $n$-células $e_\alpha^n$ via mapas $\varphi_\alpha: S^{n-1} \rightarrow X^{n-1}$. Esto significa que $X^n$ es el cociente de $X^{n-1} \bigsqcup_\alpha D_\alpha^n$ of $X^{n-1}$, con las identificaciones $x \sim \varphi_\alpha(x)$ para $x \in \partial D_\alpha^n$. Tenemos que $X^n=X^{n-1} \bigsqcup_\alpha e_\alpha^n$ donde cada $e_\alpha^n$ es un $n$-disco abierto.
+\item Podemos parar este proceso luego de $n$ pasos, obteniendo un complejo de \textbf{dimensión} $n$, o dejarlo continuar indefinidamente, en cuyo caso $X$ tiene la topología débil: $A \subset X$ es abierto si y solo si $A \cap X^n$ es abierto en $X^n$ para todo $n$.
+\end{enumerate}
+
+
+\begin{eje}
+\begin{enumerate}
+\item Un \textbf{grafo} es un complejo celular de dimensión $1$.
+\item $S^n$ tiene dos células. 
+
+\item \textbf{Espacio proyectivo real de dimensión $n$.} Existen definiciones equivalentes:
+\begin{enumerate}
+	\item Conjunto de subespacios lineales de dimensión $1$ en $\mathcal{R}^{n+1}$.
+\item Cociente de $R^{n+1} \setminus \{0\} $, identificando puntos en una misma recta.
+\item Cociente de $S^n$, identificando puntos antípodas.
+\item Cociente del hemisferio $ D^n $, identificando puntos antípodas en $\partial D^n$.
+\end{enumerate} Como el cociente de $\partial D^n$ identificando antípodas es $\mathcal{R}P^{n-1}$, tenemos una estructura de complejo celular $\mathbb{R}P^n = e^0 \cup e^1 \cup \cdots \cup e^n $, donde $e^i$ es una $i-$célula, $0 \leq i\leq n$. Si no detenemos este proceso, obtenemos $\mathbb{R} \mathrm{P}^{\infty}=\bigcup_n \mathbb{R} \mathrm{P}^n$
+
+
+\item El caso complejo es similar, tenemos que $\mathbb{C P}^n=e^0 \cup e^2 \cup \cdots \cup e^{2 n}$, y es equivalente al cociente de $S^{2n+1}$ (identificamos no solo antípodas, sino aquellos múltiplos por complejos de norma $1$).
+\end{enumerate}
+\end{eje}
+
+%terminar cap 0
+
+
+
+
+
+
+
+\chapter{Homologías}
+
+\section{Cálculo}
+
+
+
+
+\section{Aplicaciones clásicas}
+
+\subsection{Teorema de De Rham}
+
+
+\subsection{Grado}
+
+
+
+
+\section{Axiomas}	
+
+
+	
+	
+\section{De los coeficientes}	
+
+
+
+
+
+\chapter{Cohomología}
+
+
+\section{Dualidad de Poincaré}
+
+\section{Productos cup y cap}
+
+
+
+
+\part{Teoría de Homotopía}
+
+
+\chapter{Grupo fundamental}
+
+\section{Cálculos}
+
+\section{Cubrimientos}
+
+\section{Una aplicación en Teoría de Grupos}
+
+
+
+
+
+
+
+
+
+
+\part{Más herramientas}	
+
+
+\chapter{Homología de intersección}
+
+
+
+\chapter{Espacios de intersección}
+\end{document}
+
+
+
+

@@ -1,0 +1,417 @@
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{tgbonum}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newtheorem{eje}{Ejemplo}
+\newtheorem{teo}{Teorema}
+\newtheorem{obs}{Observación}
+\newtheorem{lem}{Lema}
+\newtheorem{pro}{Proposición}
+\newtheorem{ex}{Ejercicio}
+\newtheorem{cor}{Corolario}
+
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\re}{\mathbb{R}}
+\begin{document}
+\title{Geometría Algebraica}	
+\author{Abraham Rojas}
+\date{ }
+
+\maketitle
+\tableofcontents
+\part{Parte I}
+
+\chapter{Introducción}
+%estructura del libro 
+
+Este es un libro de Geometría. \\
+
+Asumiremos conocimientos de Álgebra Conmutativa, aunque hay un resu,ent en el apéndice.
+
+Me gusta distinguir entre dos conceptos: la Geometría Algebraica, el estudio de la geometría utilizando espacios algebraicos y herramientas algebraicas, y por otro, lo que me gusta llamar "Álgebra Geométrica", o sea, utilizar herramientas geométricas para estudiar estructuras algebraicas. Nosotros seguiremos el primer enfoque.\\
+
+Por otro lado, podemos estudiar la Geometría utilizando diferentes tipos de espacios ambiente y diversas herramientas. \\
+
+Obviamente, toda distinción que se haga entre áreas del conocimiento no deja de ser artificial. \\
+
+la introducción de un libro me parece una buena oportunidad para comentar temas qeu no serán explicados en el mismo. POr ejemplo, Álgebra Geometrica
+
+
+\chapter{Guardando información geométrica}
+
+
+
+%en realidad, esto debería ir en el libro de goem. diferencial
+%
+%$M$ espacio topológico. \textbf{Fibrado vectorial} de rango $k$ sobre $M$ es un espacio topológico $E$ junto con un mapa continuo sobreyectivo $\pi : E \rightarrow M$ tal que :
+%\begin{enumerate}
+%\item Para cada $p \in M$, la fibra $E_p=\pi^{-1}(p)$ sobre $p$ tiene la estructura de un espacio vectorial real de dimensión $k$.
+%\item Para cada $p \in M$, existe un vecindad $U$ de $p$ en $M$ y un homeomorfismo $\Phi: \pi^{-1}(U) \rightarrow U \times \mathbb{R}^k$ (\textbf{trivialización}), tal que
+%\begin{itemize}
+%\item $\pi_U \circ \Phi=\pi$ ($\pi_U $ es la proyección sobre $U$);
+%\item la restricción de $\Phi$ a una fibra $E_q$ es un isomorfismos de espacios vectoriales entre $E_q$ y $\{q\} \times \mathbb{R}^k \cong \mathbb{R}^k$.
+%\end{itemize}
+%\end{enumerate}
+%
+%si $M$ son variedades suaves (con o sin borde), $/pi$ es un mapa suave y las trivizalizaciones locales son difeomorfismos, entonces $E$ es un \textbf{fibrado vectorial suave}
+
+
+
+
+\section{Haces}
+
+Podemos pensar en los haces como generalización del concepto de fibrado.\\
+
+Sea $X$ un espacio topológico.\\
+
+Consideremos la categoría $\mathfrak{U}$, cuyos elementos son los abiertos de $X$ y cada morfismo $U\rightarrow V$ proviene de la inclusión $U \subset V$.\\
+Un \textbf{pre-haz} (de grupos abelianos) sobre $X$ es un funtor contravariante $$ \mathcal{F}:\mathfrak{U} \rightarrow \mathfrak{Sets}$$
+Dados $U \subset $ en $\mathfrak{U}$, el \textbf{morfismo de restricción} es el morfismo correspondiente a la inclusión. Dado $s \in \mathcal{F}(V)$, denotaremos su \textbf{restricción} en $U$ (i.e., su imagen por el morfismo de restricción) por $s|_U$. A veces, denotaremos $\Gamma(U, \mathcal{F})= \mathcal{F}(U)$.\\
+Un \textbf{haz} (de grupos abelianos) es un pre-haz que satisface
+\begin{itemize}
+\item (Determinación) Sean $U$ un abierto, $\{V_i\}_{i\in I}$ un cubrimiento abierto y $s\in U$ tal que $s|_{V_i}=0$ para todo $i$, entonces $s=0$.
+\item (Construcción) Sean $U$ un abierto, $\{V_i\}_{i\in I}$ un cubrimiento abierto y elementos $s_i \in \mathcal{F}(V_i)$ para cada $i$, tal que $s_i |_{V_i \cap V_j} = s_j |_{V_i \cap V_j}  $ para todo $i,j$. Entonces existe $s\in \mathcal{F}(U)$ tal que $ s|_{V_i} = s_i$ para cada $i$ 
+\end{itemize}
+
+
+\begin{eje}[Variedades suaves]
+
+\end{eje}
+
+\begin{eje}[los clásicos]
+	contenidos...
+\end{eje}
+
+\subsection{gavijas}
+
+
+\subsection{Hacificación}
+
+%debería ser después de álgebra conmutativa 2 
+%\section{Cohomologia de haces}
+%
+%
+%
+%\subsection{Cohomología por resoluciones}
+%
+%
+%
+%\subsection{Cohomología de Čech}
+
+
+
+\subsection{Más ejemplos y motivación}
+
+%solo enunciar resultados, no dar ideas y no demostraciones
+
+
+
+
+
+\section{Divisores en variedades complejas}
+
+%\subsection{Teoría topológica de intersección}
+
+
+
+
+
+
+
+\chapter{La Geometría de los anillos conmutativos}
+
+
+%problemas clásicos: dimensión (teoría de eliminación, espacio tangente, intersecciones)\\
+%dos problemas son equivalentes si las variedades son isomorfas.
+En adelante, $A$ será un anillo conmutativo con unidad. \\
+
+\section{Geometría Algebraica Clásica}
+
+Sea $K$ un cuerpo algebraicamente cerrado, el \textbf{espacio afín de dimensión $n$} sobre $K$ es definido como $K^n$, denotado por $ \mathbb{A}^n _K$ o $\mathbb{A}^n$.\\
+
+
+Sea $S \subset K[X_1, \ldots , X_n]$, definimos el \textbf{conjunto algebraico} (asociado a $S$) como $$Z (S) =\{ P \in \mathbb{A} ^n \; | \; f(P) =0, \; \forall f \in S  \}. $$ 
+
+Es obvio que si $S \subset T \subset K[X_1, \ldots , X_n]$ entonces $Z (J) \subset Z (I)$. 
+
+\begin{eje}
+	\item conjuntos unitarios son llamados \textbf{puntos}, estos son conjuntos algebraicos, también cantidad finita de puntos.
+	\item recta afín, curvas algebraicas planas.
+	\item Note que $Z(f)^n = Z(f)$, luego si $I $ es un ideal, entonces $Z(\sqrt{I})= Z(I)$. 
+\end{eje}
+
+%algunos preguntas interesantes 
+
+
+Dado $h\in K[X_1, \ldots , X_n]$, definimos $D(h)= \mathbb{A}^n \setminus Z(f) $.
+
+\begin{pro}[Topología de Zariski ingenua]
+	Sea $\{I_\lambda\}_{\lambda\in \Lambda}$ una familia de ideales de $K[X_1, \ldots , X_n]$, tenemos que 
+	\begin{equation*}
+		\bigcap _{\lambda \in \Lambda } Z (J _ \lambda) = Z \left( \sum _{\lambda \in \Lambda} j _\lambda \right).\\
+		\bigcup _ {i=1} ^k Z(J _ {\lambda_i}) = Z \left( \bigcap_{i=1 }^k J _{\lambda_i}  \right) =  Z \left( \prod_{i=1 }^k J _{\lambda_i}  \right)
+	\end{equation*}
+	
+	Así, los conjuntos algebraicos forman la familía de conjuntos cerrados correspondiente a una topología en $\mathbb{A}^n$, llamada \textbf{topología de Zariski}. Los conjuntos $D(h)$ forman una base para esta topología.
+\end{pro}
+
+
+
+Sea $X \subset \mathbb{A}^n $, definimos el \textbf{ideal asociado} a $X$ como $$I(X) = \{ f \in K[X_1, \ldots , X_n]\; | \; f(P) =0, \; \forall P \in X  \}.$$
+
+Es claro que si $X \subset Y \subset \mathbb{A}^n$ entonces $I(X) = I(Y)$. Además, si $f^n\in I(X)$ entonces $f\in I(X)$, luego $I(X)$ es un ideal radical. \\
+Por otro lado, el Teorema de la base de Hilbert implica que $I(X)$ siempre es finitamente generado. 
+
+
+\begin{teo}[Nullstellensatz geométrico]
+	Sea $K$ un cuerpo algebraicamente cerrado. Tenemos que $$\sqrt{I} = I(Z (I))$$
+\end{teo}
+
+\begin{cor}
+	Existe una biyección entre el con
+\end{cor}
+
+
+%variedades proyectivas
+
+
+
+
+\subsection{Más que una equivalencia entre categoría}
+
+
+
+
+
+
+
+
+\section{Espectros}
+
+
+El \textbf{espectro} de $A$ es el conjunto de sus ideales primos, denotado por $\operatorname{Spec}(A)$. Podemos dotar a este conjunto de la \textbf{Topología de Zariski}, donde los conjuntos cerrados son de la forma $$ V(I) := \{ \mathfrak{p} \in \operatorname{Spec} A \;| \; I \subset \mathfrak{p} \}, \mbox{ donde } I \mbox{ es un ideal}.$$
+
+\subsection{Topología de Zariski}
+
+%axiomas de topologia
+
+
+Dado um elemento $h\in A$, definimos $$D(h)= \{\mathfrak{p} \; |\; h \notin\mathfrak{p}\}$$
+
+
+
+Si $\phi : A \rightarrow B$ es un morfismo de anillos, definimos el \textbf{mapa induzido} por $$ \operatorname{Spec}(\phi) : \operatorname{Spec} (B) \rightarrow \operatorname{Spec}(A)$$
+
+\begin{teo}
+\begin{enumerate}
+\item $\{D(H)\}_{h\in A}$ es una base de abierto de la topología de Zariski.
+\item Los mapas inducidos por morfismos de anillos son continuos.
+\item $\operatorname{cl} \{\mathfrak{p}\} = V(\mathfrak{p})$,  en particular, un ideal primo es un punto cerrado si y solo si este es maximal.
+\item $\operatorname{Spec}(A)$ es compacto. 
+\item Sea $I$ un ideal, el morfismo inducido de la proyección natural $A \rightarrow A/I$ es un homeomorfismo entre $\operatorname{Spec}(A/I) $ con $V(I)$.
+
+\end{enumerate}
+\end{teo}
+
+\begin{eje}
+
+\end{eje}
+
+%definición de dimensión topológica, irreducibles, espacio topológico noetheriano, punto genérico 
+
+%existe una biyección entre los puntos cerrados de spec y 
+
+\begin{teo}[Nullstellensatz]
+Sea $ \sqrt{I}= I(Z(I))$
+\end{teo}
+
+%problemas de la topología de Zariski
+
+
+
+
+\section{Esquemas}
+
+
+
+\subsection{Productos fibrados}
+
+
+
+\chapter{Morfismos proyectivos}
+
+El \textbf{espacio proyectivo} de dimensión $n$ sobre $k$, denotado por $\mathcal{P}^n_k$, está dado por $\mathbb{A}^{n+1}_k /\sim$, dada por la relación de equivalencia $$
+\left(a_0, \ldots, a_n\right) \sim\left(\lambda a_0, \ldots, \lambda a_n\right) \text { for all } \lambda \in k, \lambda \neq 0 \text {. }
+$$
+
+
+Sabemos que $S= k[x_0 , \ldots, x_n]$ es un anillo, siendo $S_d$ las combniaciones lineales de monomios de grado $d$.\\
+Sea $T$ un conjunto de polinomios homogéneos, el \textbf{conjunto de zeros} de $T$ es definido como
+$$
+Z(T)=\left\{P \in \mathbf{P}^n \mid f(P)=0 \text { for all } f \in T\right\} .
+$$
+si $I$ es un ideal homogéneo, definimos $Z(I)$ como el conjunto de ceros del conjunto de elementos homogéneos de $I$.\\
+$Y \subset \mathbb{P}$ es \textbf{conjunto algebraico proyectivo} si existe un conjunto de polinomios homogéneos $T$ tal que $Y= Z(T)$.\\
+Sea $Y\subset \mathbb{P}^n$, definimos su \textbf{ideal homogéneo} como $$I(Y)= \langle \{ f\in S \, | \, f \mbox{ es un polinomio homogéneo y } f(P)=0 \mbox{ para todo } P \in Y \}  \rangle $$ 
+Si $Y$ es un conjunto algebraico, su \textbf{anillo de coordenadas homogéneas} está definido como $S(Y)= S/I(Y)$.
+
+La topologia de Zariski en $\mathbb{P}^n$ es aquella cuyos cerrados son los conjuntos algebraicos proyectivos.\\
+Una \textbf{variedad proyectiva} es un conjunto algebraico irreducible en $\mathbb{P}^n$, con la topología inducida. Un conjunto abierto de una variedad proyectiva es un \textbf{variedad casi-proyectiva}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\part{Teoría}
+
+
+\chapter{Clases Características}
+
+\section{Divisores, encajes y diferenciales}
+
+\subsection{Morfismos proyectivos}
+
+\subsection{Teorema de Riemann-Roch}
+
+\subsection{Dualidad de Serre}
+
+\section{Variedades Jacobianas}
+
+
+
+
+
+
+
+\chapter{Algunos casos particulares}
+
+\section{Geometría birracional}
+
+\section{Curvas}
+
+\section{Superficies}
+
+\section{Geometría Compleja}
+
+\section{Geometría Diofantina}
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Deformaciones}
+
+\section{Teoría de Intersección}
+
+
+Me llevó mucho tiempo tratar de entender los cómos y los porqués de las definiciones. Valió mucho la pena, pero creo que un\\
+Lo más difícil es dar un concepto (y en particular, una definición) precisa de los número de intersección y grado de una variedad.
+Así que comenzaremos dando algunas condiciones (que pueden tomarse como axiomas) que cumplen los número de intersección\\
+
+número de intersección lo que implica definición de grado
+
+El primer paso percibir que el número de intersección varía continuamente con la posición de las variedades. Considere el siguiente
+
+\begin{eje}
+	%x n  y ^m tiene número de intersección nm
+\end{eje}
+
+Ya podemos ver una de las posibles definiciones del número de intersección
+
+
+\subsection{Resultantes}
+
+Sea $A$ un dominio integral. Sean $P(x)= \sum^p_{k=0} a_{p-k} x^k$ y $Q(x)= \sum^q_{k=0} b_{q-k} x^k$ polinomios homogéneos en $A[x]$, de grados $p$ y $q$ respectivamente. El \textbf{resultante} de $P$ y $Q$ es el determinante de la función $A-$lineal $A[x]_{\leq p} \times A[x]_{\leq q} \rightarrow A[x]_{\leq p+q}$ definida por $$ (A,B) \rightarrow Ap+BQ $$
+
+El resultante posee muchas propiedades interesantes para el álgebra computacional. Para nuestros fines, será necesaria la siguiente 
+
+\begin{pro}
+\begin{enumerate}
+\item El resultante se anula si y solo si los polinomios tienen una raíz común en cuerpo algebraicamente cerrado que contiene al anillo de coeficientes.
+\item es un polinomio homogéneo, de grado $p$ respecto a los $a_i$ y de grado $q$ respecto a los $b_j$.
+
+\end{enumerate}
+\end{pro}
+
+\chapter{Cohomologia Ètale}
+
+
+
+%resultante y U-resultante
+
+
+\chapter{Mirror Symmetry}
+
+
+
+
+
+
+
+\appendix
+
+\chapter{Un poco de Análisis}
+
+\chapter{Un recuento de Álgebra Conmutativa}
+
+\chapter{Álgebra Homológica}
+
+\section{Categorías Abelianas}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+\section{Topología algebraica}
+
+\subsection{Recubrimientos y grupo fundamental}
+
+\subsection{Homologías y Cohomologías}
+
+
+
+
+
+
+
+\section{Otros}
+
+\subsection{Estructuras exóticas}
+
+\subsection{Grupos de Lie}
+
+\subsection{Cocientes}
+
+\subsection{Teoría de Galois Diferencial}

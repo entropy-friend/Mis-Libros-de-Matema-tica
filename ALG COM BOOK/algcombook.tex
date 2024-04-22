@@ -1,0 +1,1123 @@
+\documentclass[12pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{charter}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newtheorem{eje}{Ejemplo}
+\newtheorem{teo}{Teorema}
+\newtheorem{obs}{Observación}
+\newtheorem{lem}{Lema}
+\newtheorem{pro}{Proposición}
+\newtheorem{ex}{Ejercicio}
+\newtheorem{cor}{Corolario}
+
+\newcommand{\z}{\mathbb{Z}}
+\newcommand{\n}{\mathbb{N}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\aso}{\operatorname{Aso}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\pp}{\mathfrak{p}}
+\newcommand{\sop}{\operatorname{sop}}
+\newcommand{\lon}{\operatorname{lon}}
+\newcommand{\qq}{\mathfrak{q}}
+\newcommand{\gr}{\operatorname{gr}}
+\newcommand{\seq}{0\rightarrow M' \rightarrow M \rightarrow M'' \rightarrow 0}
+\newcommand{\mm}{\mathfrak{m}}
+\begin{document}
+\large
+\title{Álgebra Conmutativa}	
+	\author{Abraham Rojas}
+	\date{ }
+	
+	\maketitle
+	\tableofcontents
+
+	%estructura del libro 
+	
+
+	
+	
+\part{Teoría básica}	
+	
+	
+\chapter{Ideales y módulos en anillos conmutativos}
+
+%modulos generalizan a los ideales
+Sea $A$ un anillo conmutativo (con unidad).\\
+%
+%Un \textbf{ideal} es un subconjunto no vacío $I$ de $A$ tal que 
+%\begin{enumerate}
+%\item es cerrado por la adición (em particular $0\in A$),
+%\item si $a\in A$ y $x\in I$ entonces $ax\in I$.
+%\end{enumerate}
+%
+%Un ideal \textbf{propio} es un ideal de $A$ que no contiene invertibles.
+%
+%\begin{ex}
+%Un ideal es propio si y solo si es distinto de $A$.
+%\end{ex}
+%
+%Dada una familia $\{b_\lambda\}_\Lambda$ de elementos de $A$, el \textbf{ideal generado} por estos elementos es definido como el conjunto las \textit{combinaciones lineales} de estos, i.e.,
+%
+%$$  a_1 b_{\lambda_1} + \cdots + a_r b_{\lambda_r},  r \in \mathbb{N} , a_i \in A , \lambda_i \in \Lambda.  $$
+%
+%El ideal generado por $a_1, \ldots , a_r \in A $ será denotado por $(a_1, \ldots , a_r)$. Ideales generados por un único elemento son llamados \textbf{principales}.
+%
+%\begin{ex}
+%El núcleo de un morfismo de anillos (conmutativos) es un ideal del dominio.
+%\end{ex}
+%
+%Dados dos ideales $I$ y $J$ de $A$, definimos el \textbf{producto} de estos como $$ I J = \{a_1 b_{\lambda_1} + \cdots + a_r b_{\lambda_r},  r \in \mathbb{N} , a_i \in I , b_i \in J\}. $$
+
+El \textbf{radical} de $I$ es definido como $$ \sqrt (I) = {a \in A \; | \; a^n \in I \mbox{ para algun }n\in \mathbb{N} } .$$
+
+\begin{ex}
+$IJ$, $I\cap J$, $I+J$, $\sqrt{I}$ son ideales de $A$. Además, $IJ \subset I\cap J$. 
+\end{ex} 
+
+
+
+Definimos el \textbf{anillo cociente} de $A$ sobre el ideal $I$ como el cociente de grupos abelianos $A/I$. Podemos darle una estructura de anillo, considerando la multiplicación $ \overline{a} \overline{b} := \overline{ab}$ (\textit{ejercicio fácil}). De esta forma, la proyección $\pi:A\rightarrow A/I$ es un \textit{epimorfismo} de anillos.\\
+
+\begin{ex}[Teorema de isomorfismo]
+Sea $\phi$ un epimorfismo de anillos. ...
+\end{ex}
+
+\begin{teo}[Lema de correspondencia]
+	contenidos...
+\end{teo}
+
+\section{Ideales primos, maximales}
+
+Un ideal $I$ es \textbf{primo} si satisface $$ x,y \in I \mbox{ implica } x \in I \mbox{ o } y\in I .$$
+
+El conjunto de los ideales primos de $A$ es denotado por $\operatorname{Spec}A$.
+
+
+
+\begin{eje}
+
+\end{eje} 
+La \textbf{altura} de $\mathfrak{p}\in \operatorname{Spec}A$ es el supremo de $n\in \mathbb{N}$ tal que existe una cadena $ \mathfrak{p}_0 \subsetneq \cdots \subsetneq \mathbb{p}_n = \mathfrak{p}$ en $\operatorname{Spec}$, denotada por $\operatorname{alt} \mathfrak{p}$\\
+La \textbf{dimensión de Krull} (o simplemente, dimensión) de $A$ es el supremo de las alturas de sus ideales primos, será denotada por $\dim A$.
+
+\begin{eje}
+	contenidos...
+\end{eje}
+
+\begin{teo}
+	El mapa $\phi:A\rightarrow B$ un mapa de anillos. La preimagen de un ideal  primo es un ideal primo.
+\end{teo}
+
+Un ideal es \textbf{maximal} si es maximal en el conjunto de los ideales de $I$, según la relación de inclusión.
+\begin{pro} Sea $I$ un ideal de $A$.
+\begin{enumerate}
+\item $I$ es primo si y solo si $A/I$ es un dominio.
+\item $ I $ es primo si y solo si $A/I$ es un cuerpo
+\end{enumerate}
+En particular, todo ideal maximal es primo.
+\end{pro}
+
+\begin{eje}
+la preimagen no preserva maximales excepto si el mapa es sobre
+\end{eje}
+
+\begin{teo}
+Todo ideal propio y todo elemento de $A^{\times}$ está contenido en un ideal maximal.
+\end{teo}
+
+
+
+
+
+Un \textbf{anillo local} es aquel que posee un único ideal maximal. En el próximo capítulo, vamos a construir muchos ideales locales.\\
+Un anillo \textbf{semilocal} es un anillo con una cantidad finita de ideales maximales. Entre estos, destacan los anillo artinianos.
+
+
+
+
+\begin{eje}[Ideales radicales]
+Un anillo radical es aquel donde 
+\end{eje}
+
+
+
+
+\section{Pre-álgebra Homológica}
+
+Sea 
+
+\begin{teo}[fundamental]
+	Secuencias exactas cortas inducen secuencias exactas largas en homología.
+\end{teo}
+
+
+
+
+
+%\chapter{Módulos y secuencias exactas}
+%
+%
+%\section{Álgebra lineal}
+%
+%Un \textbf{módulo} sobre $A$ (también llamado $A-$módulo) es un grupo abeliano $M$, con operación $+$, dotado de una operación $ A\times M \rightarrow M$ (llamada \textbf{multiplicación por escalar}) bilineal tal que $1\in A$ actúa trivialmente en $M$.\\
+%Un \textbf{submódulo} $N$ de $M$ es un subconjunto cerrado por combinaciones $A-$lineales. Assim, $N$ también es $A-$módulo.\\
+%
+%Sean $M$ y $N$ submódulos de $A$. Un \textbf{morfismo de módulos} es un mapa $M\rightarrow N$ tal que 
+%
+%\begin{eje}
+%	\begin{enumerate}
+%		\item Si $K$ es un cuerpo, un $K-$módulo es lo mismos que un $K-$espacio vectorial.
+%		\item $A$ es un módulos sobre sí mismo. Los $A-$submódulos de $A$ son los ideales de $A$.
+%		\item Un grupo abeliano es lo mismo que un $\mathbb{Z}-$módulo. La operación... 
+%	\end{enumerate}
+%\end{eje}
+
+%matrices, determinantes, linear, bases. 
+
+
+%espectros de A- álgebras, pag 214 Tengan.... comparar con finitamente A-generado álgebra
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Dos operaciones fundamentales}
+
+El producto tensorial y la localización son operaciones funtoriales entre módulos con importantes interpretaciones geométricas. En ambos casos, comenzaremos dando las definiciones básicas para luego pasar directamente a las \textit{definiciones universales} que, como sabemos, facilitan los cálculos con isomorfismos. Terminaremos el capítulo dando ejemplos que son piezas clave en el desenvolvimiento de otras áreas matemáticas.  
+
+
+
+\section{Localización}
+%defición 
+%ejemplos principales
+%ejercicio (ejemplo teoría de divisores)
+%propiedad universal y ejercicios de uso
+
+\subsection{Cambios de base}
+%finito es estable, etc...  ver geo alg
+
+
+\begin{teo}
+	La localización (respecto a algún conjunto multiplicativo) es un funtor exacto.
+\end{teo}
+
+\begin{cor}[Localización de morfismos de módulos]
+	
+\end{cor}
+
+
+
+\begin{teo}[Localización e ideales]
+	Sean $A$ un anillo y $S\subset A$ un conjunto multiplicativo, con mapa de localización $\rho: A \rightarrow S^{-1}A$.
+	\begin{enumerate}
+		\item Los ideales de $S^{-1}A$ son de la forma $S^{-1}I$ donde $I $ es un ideal de $A$.
+		\item $\operatorname{Spec}(\rho)$ es inyectivo y tiene imagen $$D_S = \{\mathfrak{p} \in \operatorname{Spec} A \; |\; \mathfrak{p} \cap S = \emptyset \}.$$ 
+		\item Tenemos una biyección ....
+		
+		\item Sea $\mathfrak{p}\in \operatorname{Spec}A$, tenemos que $$ \dim A \geq \dim A_\mathfrak{p} + \dim A/\mathfrak{p}.  $$ 
+		
+	\end{enumerate}
+\end{teo}
+
+
+
+%isomorfismos básicos 
+%ejemplos
+%exactitud a derecha
+%ejemplos
+
+
+
+
+
+
+
+\section{Producto tensorial}
+
+Sean $M, N$ módulos. Sea $P$ el módulo libre con base $M\times N$, sea $R$ el submódulo generado por los elementos de la forma
+\begin{itemize}
+\item $ e_{(am,n)} -a e_{(m,n)} $, $ e_{(m,an)} -a e_{(m,n)} $ ,
+\item $ e_{(m_1+m_2,n)} - e_{(m_1,n)} - e _{m_2, n} $,
+\item $ e-{m, n_1 + n_2} - e _{m,n_1} - e _{m,n_2}$
+\end{itemize}
+El \textbf{producto tensorial} de $M$ y $N$ (sobre $A$) está definido por $M\otimes N = P /R$. La clase de $(m,n)$ es denotada por $m\otimes n$. De esta manera, la operación $\otimes : M\times N \rightarrow M \cdot N$ es bilineal.
+
+\begin{teo}[Propiedad universal]
+Para todo módulo $T$ y todo mapa bilineal $\phi : M\times N \rightarrow T$ existe un único morfismo de módulos $ f: M \cdot N \rightarrow T$ tal que $ \phi = f \circ \otimes $
+\end{teo}
+
+\begin{teo}[Exactitud a derecha]
+Si $M\rightarrow N \rightarrow P \rightarrow 0$ es una secuencia exacta, entonces la secuencia inducida es exacta: 
+$$ M \otimes T \rightarrow N  \otimes T \rightarrow P \otimes T \rightarrow 0 $$
+\end{teo}
+%contraejemplo
+
+
+\subsection*{Isomorfismos básicos}
+\begin{enumerate}
+\item $(M \otimes N) \otimes P \simeq M (\otimes N \otimes P)$
+\item $A \otimes M \stackrel{\simeq}{\rightarrow}  M $, $a\otimes m \mapsto am$.
+\item $M \otimes N \stackrel{\simeq}{\rightarrow} N \otimes M$,
+\item $ M \otimes \left( \bigoplus_{i\in I} N_i \right)\stackrel{\simeq}{\rightarrow} \bigoplus_{i\in I} (M\otimes N_i) $, $ m \otimes (n_i ) \mapsto (m\otimes n_i )$
+\item $M \otimes (A/I) \stackrel{\simeq}{\rightarrow} M/ IM$, $ m \otimes \overline{a} \mapsto \overline{am}$.
+\item $S^{-1} A \otimes M \stackrel{\simeq}{\rightarrow} S^{-1} M$, $(a/s ) \otimes m \mapsto (am)/ s$.
+\item $A[x] \cdot B \rightarrow B[x]$
+\item $A/I \otimes A/J \simeq A/(I+J)$.
+\end{enumerate}
+
+\begin{eje}
+producto tensorial de espacio vectoriales
+\end{eje}
+
+
+
+\begin{teo}[cambios de base]
+
+
+\end{teo}
+
+
+
+
+
+
+\begin{teo}
+El coproducto en la categoría de las $A-$álgebras es el producto tensorial sobre $A$.
+\end{teo}
+
+
+
+
+
+
+
+\section{Aplicaciones}
+
+\subsection{Fibras de morfismos}
+
+\begin{lem}
+Sea $\phi : A \rightarrow B$ un morfismo de anillos y sea $f = \operatorname{Spec} (\phi)$.
+\begin{enumerate}
+\item $$ f^{-1} (V(I)) = \operatorname{Spec} (B \otimes A/I) $$
+
+\item Sea $S$ un conjunto multiplicativo, $$f^{-1}(D_S) = \operatorname{Spec} ( B \otimes A/I) $$
+
+
+\end{enumerate}
+\end{lem}
+
+\begin{teo}
+Existe una biyección natural $$ f^{-1} (\mathfrak{p}) = \spec B \otimes  k(\mathfrak{p}) $$
+\end{teo}
+
+
+
+\begin{ex}[Módulos y morfismos planos]
+	contenidos...
+\end{ex}
+
+
+\subsection{Lema de Nakayama}
+
+
+\begin{teo}[Lema de Nakayama]
+	
+	Sea $A$ un anillo y sea $\mathfrak{m}$ um ideal tal que, para todo $x\in \mathfrak{m}$, $1+x$ es invertible. Sea $M$ un $A-$módulo, tenemos que:
+	\begin{enumerate}
+		\item Si $M= \mathfrak{m} M$ y es finitamente generado, entonces $M=0$.
+		\item Si $N_1$ y $N_2$ son submódulos de $M$, con $N_1$ finitamente generado, entonces $$N_1 \subset N_2 + \mathfrak{m} N_1 \mbox{ implica que } N_1\subset N_2$$.
+	\end{enumerate}
+	
+
+\begin{ex}
+Sea $(A, \mathfrak{m},k)$ y sea $M$ un $A-$módulo libre de rango finito. Tenemos que $\dim _k M/I$ es finito si y solo si existe un entero $k\geq 1$ tal que $\mathfrak{m} ^k \subset I$.
+\end{ex}
+
+\begin{ex}[usado en singularidades] $A$ local tal que $\mm$ es finitamente generado
+\begin{enumerate}
+\item Sea $I$ un ideal. $ \mm ^k \subset I  $ si y solo si $\mm \subset I + \mm ^{k+1}$.
+\item $f_i$ genera $\mm_k $ si y solo si $ \langle \overline{f}_i \rangle _{\mathbb{R}} = \mm ^k / \mm^{k+1}.$
+
+
+
+\end{enumerate}
+\end{ex}
+	
+%en el caso de singularidades es diferente, pues debemos probar que  dim On / m_n^k	es finita sobre \R , k podría ser muy grande. no podemos usar (3) del nullstellensatz, ya que A no es fg como R-algebra ... tiene que haber una distancia grande entre On y m_n , lo cual no ocurre en el caso noetheriano, ya que dim o_n = .\detla (m_n).... VER PROP EN SECCION 7.1
+	
+	
+%definir codimensión de un ideal y de un módulo, me parece importante
+%ver resultados necesarios en singularidades , también completamientos (eso implica que O_n / m^k es tiene dimensión finita)	
+%otra caracterización se encuantra en pag. 105 Gibson,
+%codim ideal := alt ann ??
+En particular tenemos
+	\begin{cor}[Bases minimales]
+		Sea $(A, \mathfrak{m},k)$ un anillo local. $ a_1 ,  \ldots , a_n$ generan $\mathfrak{m}$ (como ideal) si y solamente si $\overline{a}_1, \ldots , \overline{a}_n$ generan $\mathfrak{m} \mathfrak{m}^2 $ como un $k-$espacio vectorial.\\
+		En particular, $\delta (\mathfrak{m}) = \dim_k (\mathfrak{m} / \mathfrak{m}^2)$.
+	\end{cor}	
+	
+\end{teo}
+
+
+\subsection{Principios locales-globales}
+
+
+%anillos catenarios
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Algunos anillos importantes}
+
+\section{Algunos dominios}
+
+anillos de factorizción única (equivalencia, relación con elementos primos e irreducibles, son normales), dominios principales (submódulo de un f.g.), euclidianos, ejemplos
+
+
+
+
+\section{Condición noetheriana}
+
+\subsection{Anillos y módulos noetherianos}
+
+\begin{teo}
+	Si $A$ es un anillo noetheriano, entonces $\dim A$ es finita
+\end{teo}
+
+\begin{ex}
+	En un anillo noetheriano, todo ideal posee solo un número finito de ideales primos minimales.
+\end{ex}
+
+\begin{teo}[Caracterización]
+	Sea $0\rightarrow M' \rightarrow M \rightarrow M''\rightarrow 0 $ secuencia exacta de $A-$módulos. $M$ es noetheriano (artiniano) si y solo si $M'$ e $M''$ son noetherianos (artinianos). En particular, cocientes y localizaciones de módulos de módulos noetherianos (artinianos) son noetherianos (artinianos). 
+\end{teo}
+
+\begin{cor}
+	Un módulo finitamente generado sobre un anillo noetheriano es noetheriano.
+\end{cor}
+
+%ejemplos contraejemplos
+%idea de uso en geometría
+
+\subsection{Artinianos}
+%serie de composición, longitud
+\begin{teo}[Módulos artinianos]
+	
+	Seja $M$ un $A-$módulo.
+	
+	\begin{enumerate}
+		\item $\operatorname{lon} _A M < \infty $ si y solo si $M$ es artiniano y noetheriano.
+		\item En el caso anterior, todas las secuencias de composición tienen la misma longitud.
+		\item [aditividad]
+	\end{enumerate}
+	
+\end{teo}
+
+
+\begin{teo}[Anillos artinianos]
+	Sea $A$ un anillo artiniano.
+	\begin{enumerate}
+		\item $\operatorname{Spec} A$ es finito.
+		\item Todo ideal primo es maximal.
+		\item $$A \simeq A_{\mathfrak{m}_1}  \times \cdots  A_{\mathfrak{m}_n}$$ donde $\mathfrak{m}_i$ son los ideales maximales de $A$.
+		\item Dominios artinianos son cuerpos.
+	\end{enumerate}
+\end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Anillos completos}
+
+
+Sean $A$ un anillo, $I $ un ideal y $M$ un $A-$módulo.
+\begin{ex}
+\begin{enumerate}
+\item La unión disjunta de $M/ I^n M$, $n\in \mathbb{N}_0$ (considerando cada cociente como la familia de las clases laterales), es una topología en $M$, al incluir el conjunto vacío.
+\item Esta topologia es Hausdorff si y solo si $\bigcap I^n = (0)$.
+\end{enumerate}
+\end{ex}
+Esta topología es la \textbf{topología $I$-ádica} de $M$.
+
+
+
+\begin{teo}[Artin-Rees]
+Sea $A$ un anillo noetheriano, sean $N \subset M$ $A$-módulos, con $M$ finitamente generado. Dado un ideal $I$, la topologia $I$-ádica de $N$ coincide con la restricción de la topología $I$-ádica de $M$ en $N$.
+\end{teo}
+
+
+\begin{cor}[Teorema de Intersección de Krull]
+Sea $A$ un anillo noetheriano e $I$ un ideal propio. Si $A$ es local o si $A$ es un dominio, entonces la topologia $I$-ádica es Hausdorff.
+\end{cor}
+
+%completamento
+
+\begin{eje}[Álgebra de Tate]
+
+\end{eje}
+
+\begin{teo}
+El completamento es un funtor exato. 
+\end{teo}
+
+\begin{teo}
+sea $A$ un anillo noetheriano $I\subset A$ un idela y $M$ un $A-$módulo finitamente generado. Tenemos que:
+\begin{enumerate}
+\item El mapa natural $M\otimes _ A \hat{A} \rightarrow \hat{M}$ es un isomorfismo.
+\item Sea $J$ un ideal de $A$, entonces $\hat{J} = J \hat{A}$.
+\item $\dim \hat{A} =  \dim A$ ???
+\end{enumerate}
+\end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Extensiones integrales}
+
+%elemento integral, extensiones integrales
+%ejemplo, caso de curvas algebraicas
+%nomenclatura para cuerpos
+%extensiones separablesa  
+
+\begin{teo}[Criterios de integridad]
+	Sea $A\subset B$ una extensión de anillos y sea $b\in B$. Son equivalentes:
+	\begin{enumerate}
+		\item $b$ es integral sobre $A$.
+		\item $A[b]$ es una $A-$álgebra finita.
+		\item $A[b] \subset C$ para alguna $A-$subálgebra $C \subset B$.
+	\end{enumerate}
+\end{teo}
+
+\begin{cor}[Caracterización de extensiones integrales]
+	\begin{enumerate}
+		\item ......
+	\end{enumerate}
+\end{cor}
+
+\section{Propiedades}
+
+\begin{lem}[Elevador]
+	contenidos...
+\end{lem}
+
+\begin{teo}[Fibras integrales]
+	%además preserva dimensiones
+\end{teo}
+
+Falta going down... que será mostrado después
+
+\begin{eje}
+	%geometría por favor... otra áreas
+\end{eje}
+
+Clausura integral... y propiedades
+
+
+\begin{pro}
+Una álgebra finitamente generada sobre un anillo noetheriano es noetheriana (sobre sí misma). Localizaciones igual..
+\end{pro}
+
+
+
+\section{Grupos de automorfismos del anillos}
+
+
+
+
+\section{Normalización de $K-$álgebras}
+
+\begin{teo}[Normalización de Noether]
+	Sea $K$ un cuerpo y sea $A$ una $K-$álgebra finitamente generada. Entonces existen $x_1 ,  \ldots x_n \in A$ algebraicamente independientes sobre $K$ tal que $A$ es finito sobre $K[x_1 ,  \ldots x_n] $ 
+\end{teo}
+
+\begin{teo}
+	Sea $K$ un cuerpo y sea $A$ un dominio que es una $K-$álgebra finitamente generada. Luego:
+	\begin{enumerate}
+		\item $\dim A = \operatorname{gr.tr.}_K \operatorname{Frac} A$.
+		\item Para todo $\mathfrak{p}\in \operatorname{Spec}A$: $$ \operatorname{alt} \mathfrak{p} + \dim A /\mathfrak{p} = \dim A. $$
+		\item Sea $L$ una extensión de cuerpos finita de $\operatorname{Frac}A $. Tenemos que $\operatorname{ic}_L$ es un $A-$módulo finitamente generado, y también una $K-$álgebra finitamente generada. 
+	\end{enumerate}
+\end{teo}
+
+
+\begin{teo}[Dimensión de fibras]
+	Sean $(A, \mathfrak{m}, k)$ y $(B, \mathfrak{n}, l)$ noetherianos, sea $\phi:A \rightarrow B$ morfismo local. Sea $(M_n)$ una filtración $\mathfrak{q}-$estable. Entonces $$ \dim B \leq \dim A + \dim B \otimes_A k $$
+	con igualdad si $B$ es fielmente plano sobre $A$.
+\end{teo}
+
+\begin{cor}
+	Sea $A$ anillo noetheriano. Entonces $\dim A[x_1, \ldots, x_n]= \dim A +n.$
+\end{cor}
+
+
+\begin{teo}{Hilbert's Nullstellensatz}
+	Sea $K$ un cuerpo. 
+	\begin{enumerate}
+		\item Si $K\subset L $ es una extensión de cuerpos tal que $L$ es finitamente generado como $K-$álgebra, entonces la extensión es finita.
+		\item Sea $A$ una $K-$álgebra finitamente generada sobre $K$. Sea $P\in \operatorname{Spec} A$. Entonces $P$ es un ideal maximal si y solamente si $\dim_K A/P$ es finita. 
+		\item Sea $(A, \mathfrak{m}, k)$ que es un $K-$álgebra finitamente generada, entonces $k$ es un extensión finita de $K$. Si $K$ es algebraicamente cerrado, entonces $k =K$.
+	\end{enumerate}
+\end{teo}
+
+
+
+
+
+
+
+\section{Valuaciones}
+
+Sea $K$ un cuerpo y $G$ un grupos abeliano totalmente ordenado. Una \textbf{valuación} de $K$ con valores en $G$ es una función $v: K^\times \rightarrow G$ tal que
+\begin{enumerate}
+	\item $v(xy)=v(x)+v(y)$,
+	\item $v(x+y)\geq \min \{v(x), v(y)\}$.
+\end{enumerate}
+
+El \textbf{anillo de valuación asociado} a $v$ es el subanillo local de $K$ dado por $R = \{ x\in K \; | \; v(x) \geq 0 \}$; su ideal maximal está formado por los elementos con elementos cuya valuación es positiva, junto con el $0$.\\
+Si $k$ es un subcuerpo de $K$ tal que $v|_{k^\times} =0$, $v$ es \textit{valuación de $K/k$}, y $R$ es el \textit{anillo de valuación de $K/k$}.\\ 
+Un \textbf{anillo de valuación} es un dominio que el anillo asociado a alguna valuación de su cuerpo de fracciones.\\
+Una valuación $v: K^\times \rightarrow G$ es \textbf{discreta} si $G= \mathbb{Z}$ . La definición de \textbf{anillo de valuación discreta} es análoga a la anterior.\\
+
+Sean $(A, \mathfrak{m}, k_1)$ y $(B, \mathfrak{n}, k_2)$ dos anillos locales dentro un cuerpo $K$. Decimos que $B$ \textbf{domina} $A$ si $ A \subset B $ y $ \mathfrak{n} \cap A = \mathfrak{m}$.
+
+\begin{teo}
+	\begin{enumerate}
+		\item Sea $K$ un cuerpo. Un anillo local $R$ en $K$ es una anillo de valuación de  $K$ si y solo si es un elemento maximal en el conjunto de los anillos locales en $K$, respecto a la relación de dominación. 
+		\item Todo anillo local en $K$ está dominado por un anillo de valuación en $K$
+	\end{enumerate}
+\end{teo}
+
+
+\begin{teo}
+	Sea $(A, \mathfrak{m}, k)$ noetheriano de dimensión $1$. Son equivalentes
+	\begin{enumerate}
+		\item $A$ es un anillo de valuación discreta.
+		\item $A$ es normal.
+		\item $A$ es regular.
+		\item $\mathfrak{m}$ es principal.
+	\end{enumerate}
+\end{teo}
+
+Un \textbf{dominio de Dedekind} es un dominio noetheriano normal de dimensión $1$. Por el Teorema... y el anterior, cada localización en un ideal primo no nulo es un DVD. 
+
+\begin{pro}
+	La clausura integral de un dominio de Dedekind en una extensión finita de su cuerpo de fracciones es también un dominio de Dedekind.
+\end{pro}
+
+%ramificación en Dominios de dedekind
+%ejemplos geométricos
+
+
+
+\section{Regularidad}
+Un anillo local $(A, \mathfrak{m},k)$ noetheriano es dicho \textbf{regular} si $\delta(\mathfrak{m}) = \dim A = \dim _k (\mathfrak{m} / \mathfrak{m}^2)$.\\
+
+
+\begin{teo}[Teorema de estructura de Cohen]
+	Si $(A, \mathfrak{m}, k)$ es regular completo de dimensión $n$ conteniendo un cuerpo, entonces $$A \simeq k[[x_1, \ldots , x_n]].$$
+\end{teo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\part{Álgebra Homológica}
+
+
+
+
+
+\chapter{Dimensión y multiplicidad}
+
+
+El \textbf{radical} de un módulo $M$ es definido como el radical $\operatorname{Anu} M $, denotado por $\operatorname{rad} M$. Es claro que $\operatorname{rad} (R/\operatorname{Anu})  = \operatorname{rad} / \operatorname{Anu} M$.\\
+En particular, si $A$ es local entonces $\mathfrak{m} = \operatorname{rad}M$.
+
+
+\section{Primos asociados}
+%división de ideal con módulo, divisores de zero, nilradical de anillo 
+
+Sea $A$ un anillo y $M$ un $A$-módulo. \\
+
+$\mathfrak{p}\in \operatorname{Spec}A$ es un \textbf{primo asociado} de $M$ si $$\mbox{existe} m\in M \mbox{ tal que }   \mathfrak{p} = \operatorname{Anu} m $$
+El conjunto de primos asociado es denotado por $\operatorname{Aso}_A M$ o $\operatorname{Aso}M$.
+
+\begin{ex}[fácil e importante]
+\begin{enumerate}
+\item $\mathfrak{p}\in \operatorname{Aso} M$ si y solo si existe $ A / \mathfrak{p} \hookrightarrow M $.
+\item $\operatorname{Aso} (A/ \mathfrak{p}) = \{\mathfrak{p}\}$.
+\item $ZD (M)= \cup _{\pp\in \aso M} \pp$.
+\end{enumerate}
+\end{ex}
+
+
+
+
+\begin{pro}
+	Sea $A$ un anillo noetheriano y sea $M$ un $A-$módulo finitamente no nulo. Luego $\operatorname{aso} M \neq \emptyset$.\\ 
+\end{pro}
+
+\begin{pro}
+Sea $0\rightarrow M' \rightarrow M \rightarrow M'' \rightarrow 0$ una secuencia exacta. Luego $$ \aso M' \subset \aso M \subset \aso M' \cup \aso M'' .$$
+\end{pro}
+
+\begin{teo}[Cadenas primarias]
+
+Sea $A$ anillo noetheriano y sea $M$ un $A-$módulo finitamente generado. Luego existe una cadena de submódulos (llamada \textbf{primaria}) $ 0= M_0 \subsetneq M_1 \subsetneq \cdots \subsetneq M_n =M $ tal que $$ M_{i+1} / M_i \simeq A/ \mathfrak{p}_i  \mbox{ con } \mathfrak{p}_i \in \operatorname{spec}A $$
+Además $\aso M \subset \{\mathfrak{p}_1 , \ldots , \mathfrak{p}_n \}$, para cualquier cadena primaria como la anterior. En particular $\aso M$ es finito.
+\end{teo}
+
+
+Un primo asociado es llamado \textbf{encajado} si no es minimal en $\operatorname{Aso}M$ (por inclusión).
+
+\begin{eje}[geometría]
+también sobre cadenas primarias y primos asociados en general
+\end{eje}
+
+
+\begin{lem}
+Sea $A$ noetheriano y $M$ finitamente generado,
+$$ \aso _{A _ \pp} M_\pp = \{ \mathfrak{q} A _\pp \; | \; \mathfrak{q} \in \aso _A M, \; \mathfrak{q} \subset \pp  \} .$$
+\end{lem}
+
+
+\subsection{Descomposición primaria}
+Sea $\mathfrak{p} \spec A$. Decimos que un submódulo propio $P$ de $M$ es $\pp-$primario si $\aso M/P =\{\pp\}$.\\
+\textbf{La descomposición primaria es una versión débil de las factorización en factores primos y en anillos de Dedekind}.\\
+El caso más importante es $M= A$ noetheriano y $P$ es un ideal propio.
+
+
+\begin{lem}[Teorema chino de residuos primarios]
+Sea $A$ noetheriano y sea $M$ un $A-$módulo finitamente generado. Luego, existe $A-$módulos $E (\mathfrak{p})$, con $\aso E(\pp) = \{\pp\}$ y un encaje $$ M \hookrightarrow \prod _{\pp \in \aso M } E(\pp). $$
+\end{lem}
+
+\begin{teo}[Descomposición primaria]
+Sea $A$ un anillo noetheriano y sea $M$ un $A-$módulo fintamente generado. Dado un submódulo $N$ de $M$: 
+$$N =  \bigcap _{\pp \in \aso M/N} Q(\pp) $$ donde cada $Q (\pp)\subset M$ es un submódulo $\pp$-primario de $M$, que solo dependen $M$, $N$ y $\mathfrak{p}$. 
+
+\end{teo}
+
+\begin{eje}
+no única.
+\end{eje}
+
+
+\subsection{Soporte}
+
+conjunto de los $\pp$ tal es que $M _\pp \neq 0$.
+
+\begin{lem}[Propiedades]
+\begin{enumerate}
+\item $\operatorname{sop} M  \subset V(\operatorname{Anu} M ) $
+\item aditividad en secuencias exactas
+\item producto tensorial
+\item $\sop M = \cup _{\pp \in \aso M} V(\pp)$. En particular $\aso M \subset \sop M$ y comparten los mismos primos minimales. 
+\end{enumerate}
+\end{lem}
+Como aplicación tenemos el siguiente
+
+\begin{teo} $A$ noetheirano, $m$ finitamente generado
+\begin{enumerate}
+\item $\lon M < \infty$ $\Longleftrightarrow $ $\aso M \subset \operatorname{SpecMax} M$ $\Longleftrightarrow $ $\sop M \subset \operatorname{SpecMax} M$.
+\item Si $K$ es algebraicamente cerrado $\lon _{K[X_1, \ldots, X_n]} M = \dim _K M$. En particular, $M$ es artiniano si y solo si es dimensión finita sobre $K$.
+\end{enumerate}
+\end{teo}
+
+
+\begin{eje}
+
+\end{eje}
+
+\begin{ex}[importante en multiplicidad] Sea $A$ anillo, $I$ ideal y $M$ módulo. 
+\begin{enumerate}
+\item $\sop (M/IM) \subset \sop M \cap  V(I) $, vale la igualdad si $M$ es finatamente generado.
+\item Si $M$ es finitamente generado entonces $$ V(I + \operatorname{Anu}M ) = \sop (M/IM) = V (\operatorname{Anu}(M/IM))  $$
+\end{enumerate}
+\end{ex}
+%tengo que definir m primario para definir multiplicidades
+
+
+%explicar que existe un punto de vista más general
+
+Definimos la \textbf{dimensión} del módulo un $M$ no nulo por $$\dim M = \sup \{ r\in \;|\;  \exists \pp_0 \subsetneq \cdots \subsetneq \pp _r \mbox{ en }  \sop M\} .$$
+\begin{ex}
+Suponga que $M$ es noetheriano, luego $\dim M= \max\{  \dim (R/\pp ) \; | \;  \pp \in \sop M \mbox{ es minimal} \}.$
+\end{ex}
+
+
+
+
+
+
+
+
+\section{Anillos y módulos graduados}
+
+Sea $(G,+)$ un monoide conmutativo. Un \textbf{anillo $G-$graduado} es un anillo $A$ tal que 
+\begin{enumerate}
+	\item $A= \bigoplus _{g\in G} A_g $,
+	\item $A_g \cdot A_h \subset A_{g+h} $ para todo $g,h \in G$.
+\end{enumerate}
+Los elementos de $A_{g_o}$ son llamados \textbf{homogéneos de grado $g_0$}. Si $a= \sum _{g \in G} a_g \in A$, tal que cada $a_g\in G$, llamamos $a_{g_0}$ la \textbf{componente homogénea} de grado $g$ de $a$.\\
+Observe que cada $A_g$ es un $A_0-$módulo y $A$ es una $A_0-$álgebra. Denotamos $A_+ = \bigoplus_{g\in G^\times}$, que es un ideal de $A$.
+
+%\begin{teo}
+%	Sea $A$ un anillo $G-$graduado. Son equivalentes:
+%	\begin{enumerate}
+%		\item $A$ es noetheriano
+%		\item $A_0$ es noetheriano y $A$ es finitamente generado como $A_0$-álgebra.
+%	\end{enumerate}
+%\end{teo}
+
+
+\begin{lem}
+	Sea $A$ un anillo $G-$graduado que es una $A_0-$álgebra finitamente generada. Sea $M$ un $A-$módulo finitamente generado. Luego las componentes homogéneas de $M$ son $A_0$-módulos finitamente generados y se anulan si $n$ es pequeño. 
+\end{lem}
+
+Un morfismo $\phi: A\rightarrow B$ entre anillos $G-$graduados es un \textbf{morfismo graduado} si $\phi (A_g) \subset B_g$.\\
+
+Sea $A$ un anillo $G-$graduado. Un $A-$módulo $M$ es un \textbf{$A-$módulo graduado} si $M=\bigoplus _{g\in G} M_g$ tal que $A_g \cdot M_{h} \subset M_{g+h}$. Las definiciones de \textit{elementos homogéneos}, \textit{componentes homogéneas} y \textit{morfismo graduado entre módulos graduados} son análogas a las anteriores.\\
+Un $N$ un submódulo de $M$ es un \textbf{$G-$submódulo graduado} si $N=\bigoplus_{g\in G} N \cap M_g$. En particular, un \textbf{ideal graduado} de $A$ es un $A-$submódulo graduado de $A$.\\
+Definimos el $A-$módulo graduado $M(d)$ como el $A-$módulo definido por $M(d)_g= M_{d+g}$ para todo $g\in G$.
+
+\begin{ex}
+	\begin{enumerate}
+		\item Cocientes de módulos graduados son graduados, e inducen sequencias exactas corta de módulos graduados.
+		\item El radical de un ideal homogéneo es homogéneo.
+	\end{enumerate}
+\end{ex}
+
+
+\begin{eje}
+	%polinomios, son un ejemplo genérico!!! , álgebra de Rees
+\end{eje}
+
+\begin{lem}
+	Las siguientes condiciones son equivalentes:
+	\begin{enumerate}
+		\item $I$ es homogéneo
+		\item $a\in I$ si y solo si cada componente homogénea de $a$ está en $I$
+		\item $I$ es generado por elementos homogéneos (posiblemente de diferentes grados).
+	\end{enumerate}
+\end{lem}
+
+
+
+
+\section{Polinomio de Hilbert-Samuel}
+
+%Sea $A$ un módulo $\mathbb{N}_{\geq 0}-$graduado. Por el Teorema-.. $A$ es un $A_0-$álgebra generada por elementos homogéneos $x_1, \ldots, x_n$, de grados respectivos $k_1, \ldots, k_n$.\\
+%
+%Sea $\lambda$ una función aditiva sobre la clase de $A_0-$módulos finitamente generados. La \textbf{serie de Poincaré} de $M$ con respecto a $\lambda$ está definida por $$ P_{M,\lambda} (t) = \sum _{n=0}^ \infty \lambda(M_n) t^n .$$
+%
+%\begin{teo}[Hilbert-Serre]
+%	%existen parámetros, ver atiyah pag 116
+%	$$ P_{M,\lambda} (t) = \frac{f(t)}{\prod_{i=1}^s (1-t k_i) }  $$
+%\end{teo}
+%
+%
+%
+%\begin{cor}
+%	Si cada $k_i=1$ entonces para $n$ suficientemente grande, $\lambda(M_n)$ es un polinomio en $n$ con coeficientes racionales de grado $d-1$-
+%\end{cor}
+%
+%El polinomio del corolario anterior es el \textbf{polinomio de Poincaré} de $M$ con respecto a $\lambda$. $\lambda(M) = l_A(M)$\\
+
+Sea $A$ un anillo $\mathbb{Z}-$graduado tal que 
+\begin{itemize}
+\item $A_0$ un anillo artiniano, 
+\item $A$ es una $A_0$-álgebra finitamente generada.
+\end{itemize}
+Sea $M$ un $A-$módulo graduado finitamente generado. \\
+
+%La \textbf{función de Hilbert} de $M$ está dada por $$ HF: n\mapsto \operatorname{lon} _{A_0} M_n $$
+ La \textbf{serie de Hilbert} de $M$ está dada por $$ HS _M = \sum \operatorname{lon} (M_n) t^n .$$
+ Está bien definida pues $M_0$ es finitamente generado sobre $A_0$ (.), luego $\operatorname{lon}_{A_0} M_n < \infty $ (.).\\
+ Veremos que está función coincide con un polinomio cuando $n$ es grande.
+%Sea $M$ un $A-$módulo graduado. Si $A_0$ es un cuerpo, $\lambda(M_{\cdot})$ es llamada \textbf{función de Hilbert}. 
+
+
+\begin{teo}[Hilbert-Serre]
+Suponga que $M_n=0$ para $n<n_0$ y $M_{n_0}\neq 0$. Luego existen $f(t) \in \mathbb{Z}[t]$, con $f(0)\neq 0$ y $k_i \geq 1$ tales que $$ PH (t) = \frac{f(t)}{t^{-n_0}(1-t^{k_1}) \cdots (1-t^{k_r}) } $$
+\end{teo}
+
+\begin{cor}
+Si $A=A_0[x_1 , \ldots x_n]$ con $x_i\in R_1$ entonces $$PH_M = \frac{e(t)}{t^{n_0} (1-t)^d} $$
+donde $e(t)\in \mathbb{Z}$, $e(0),e(1) \neq 0$ y $r\geq d\geq 0$. Además, existe $h(n)\in \mathbb{Q}[n] $ de grau $d-1$ tal que $$l_{A_0}(M_n) = h_M  \mbox{ para } n\geq \operatorname{gr} e(t) + n_0. $$
+\end{cor}
+
+\section{Polinomio de Hilbert-Samuel}
+
+Una \textbf{filtración} $F^\bullet M$ de $M$ es una cadena descendente infinita de submódulos $ \cdots \supset F^n M \supset F^{n+1} \supset \cdots $.\\
+Si $I F^n M \subset F^{n+1}M$ para todo $n$, es llamada \textbf{$I$-filtración}, y es \textbf{$I$-}estable si además existen $i,j$ tales que $M= F^i K$ y $I^n F^j M = F^{n+j}$ para todo $n>0$.\\
+
+La \textbf{filtración $I-$ádica} está definida por $ (I^n M)_{n\neq 0}$, definiendo $I^n=0$ si $ n \leq0$. Claramente es estable.\\
+Considere los anillos graduados $$
+\mathcal{R}(I):=\bigoplus_{n \in \mathbb{Z}} I^{n} \quad \text { and } \quad G_{I}(R) :=\mathcal{R}(I) /(\mathcal{R}(I)(-1)) = \bigoplus _{n \geq 0} I ^n / I^{n+1}
+$$ llamados el \textbf{álgebra de Rees (extendida)} de $I$ y el \textbf{anillo asociado} a $I$, respectivamente. Note que $G_I$ es una $(A/ I)-$álgebra. 
+
+\begin{ex}
+Si $I$ es finitamente generado, entonces $\mathcal{R}(I)$ es una $A-$álgebra finitamente generada.
+\end{ex}
+
+Sea $F^\bullet M$ una $I-$filtración, considere los $A-$módulos $$
+\mathcal{R}\left(F^{\bullet} M\right):=\bigoplus_{n \in \mathbb{Z}} F^{n} M \quad \text { and } \quad G(M):=\mathcal{R}\left(F^{\bullet} M\right) /\left(\mathcal{R}\left(F^{\bullet} M\right)(-1)\right)
+$$
+Note que $
+\mathcal{R}\left(F^{\bullet} M[m]\right)=\mathcal{R}\left(F^{\bullet} M\right)(m) \quad \text { and } \quad G(M[m])=(G(M))(m)
+$.\\
+
+La \textbf{función de Hilbert-Samuel} está definida por $$
+HS\left(F^{\bullet} M, t\right):=\sum_{n \geq 0} \ell\left(M / F^{n} M\right) t^{n}
+$$ cuando los coeficienes son finitos. Estaremos interesados en la filtracion ádica, en ese caso escribiremos $ HS_\qq$.
+
+\begin{teo}[Samuel]
+$A$ anillo noetheriano y $M$ $A-$módulo fintamente generado. Sea $I$ ideal de $A$. Luego $$HS_F (t) = \frac{e(t)}{t^{l-1} (1-t)^{d+1}} $$ donde $e(t) \in\z[t]$ y $ e(0), e(1) \neq 0$ y $ l \in \z $ y $r \geq d\geq 0$, además existe un polinomio $p \in \mathbb{Q}$ de grado $d$ tal que $ \lon (M / M_i) = p (n)$ para $n\geq \gr e(t) -l+1$.
+\end{teo}
+
+$p$ es llamado \textbf{polinomio de Hilbert-Samuel}, denotado por $\lambda_F M (t) $. En el caso de la filtración $I-$ádica, será denotado por $\lambda_I M $
+
+\begin{cor}[Relación entre polinomio de Samuel Hilbert]
+En el caso anterior, si $ \lambda_I (n) - \lambda_F (n) \neq0 $, es un polinomio de grado $\leq d-1$ y coeficiente principal positivo. Luego, $d$ y $e(1)$ no dependen de la filtración escogida.
+\end{cor}
+
+\begin{pro}
+Sea $\seq$ una secuencia exacta de módulos noetherianos.
+\begin{enumerate}
+\item $ \lon (M/IM) < \infty $ $\Longleftrightarrow$ $ \lon (M'/IM') < \infty $ $\Longleftrightarrow$ $ \lon (M''/IM'') < \infty $.
+\item Si $ \lon (M/IM) < \infty$ entonces $$ \gr [ \lambda_I M' (n) - \lambda_I M (n) + \lambda_I M'' (n) ] \leq \gr \lambda_I M' (n) -1 $$ y tiene coeficiente principal positivo, además $$ \gr \lambda_I M  (n) =  \max \{ \gr \lambda_I M' (n) , \gr \lambda_I M'' (n)  \} $$  
+
+\end{enumerate}
+\end{pro}
+%para anillos locales, no tenemos que preocuparnos... otras aplicaciones??
+
+
+En el caso anterior, $I$ es un \textbf{ideal paramétrico} de $M$
+
+%Como primera aplicación, tenemos:
+%\begin{teo}
+%	Sean $(A, \mathfrak{m}, k)$ noetheriano, $M$ un $A-$módulo finitamente generado . Tenemos que 
+%	\begin{enumerate}
+%		\item $M/M_n$ es de longitud finita para cada $n\geq 0$,
+%		\item su longitud es un polinomio en $n$ de grado $\leq  \delta (A) $, $n$ suficientemente grande,
+%		\item el grado y el coeficiente principal de $g(n)$ no dependen de la filtración escogida.
+%		\item $\operatorname{gr} g = \dim A/\operatorname{an}(M)$
+%	\end{enumerate}
+%\end{teo}
+
+En el teorema anterior, $g(n)$ es llamado \textbf{polinomio de Hilbert} de $M$.
+
+
+
+\section{Teorema de la dimensión de Krull}
+
+Sea $A$ un anillo, $M$ noetheriano no nulo, $I$ ideal paramétrico. Sea $\mm = \operatorname{rad} M $ y $J= \operatorname{Anu} (M / IM )$.
+
+\begin{lem}
+$\lambda_I , \lambda_\mm$ existen y tienen el mismo grado, denotado por $d(M)$.
+\end{lem}
+
+Sea $s(M)$ el menor $s$ tal que existen $x_1, \ldots, x_s\in \mm$ tal que $\lon (M / \langle x_1, \ldots, x_s \rangle  M) < \infty.$ Caso $\lon M < \infty$ definimos $s(M)=0$. Esos elementos son llamados \textbf{sistema de parámetros} para $M$, y forman un ideal paramétrico.
+
+\begin{lem}
+Sea $A$ un anillo, $M$ noetheriano no nulo semilocal, $I$ un ideal paramétrico de $M$, sea $x$ ....
+\end{lem} 
+
+
+
+
+
+\begin{teo}[Krull]
+	Sea $M$ un módulo noetheriano semilocal no nulo. Luego $$ \dim M = d (M) = s(M) z \infty $$
+\end{teo}
+
+\begin{cor}[para secuencias regulares]
+sea $x \in \operatorname{rad} M$. Entonces $$\dim (M/xM)\geq \dim M -1,$$ con igualdad si y solo si $x \notin \pp$ para todo $\pp \in \sop M$, con $\dim (R/\pp) = \dim M$ (en particular, si $x$ no es divisor de zero)
+\end{cor}
+
+\begin{teo}[Ideal de Krull]
+	Sea $A$ un anillo noetheriano e $I$ un ideal propio. Tenemos que, para todo ideal primo minimal de $I$, $\operatorname{alt}\mathfrak{p} \leq \delta(I).$
+\end{teo}
+
+\begin{cor}
+	Para todo $(A, \mathfrak{m}, k)$, $\dim A \leq \dim_k \mathfrak{m} / \mathfrak{m}^2 $.
+\end{cor}
+
+
+\section{Multiplicidad}
+
+Por el corolario ... podemos definir la \textbf{multiplicidad} de $I$ en $M$ como ....
+
+%polinomio binomial, derivada discreta
+
+
+\section{Complejos de Kozsul}
+
+
+
+\chapter{Herramientas categóricas}
+
+%límites en módulos, completación como límite
+
+\section{Localización de categorías}
+
+
+
+
+
+\chapter{Categorías Aditivas}
+
+
+Una \textbf{categoria pre-aditiva} es uma categoria tal que os $\operatorname{Hom}(A,B)$ possuem estrutura de grupo abeliano, e composição de morfismos é bilinear. Em particular, existem morfismos nulos.\\
+Um funtor entra categorias preaditivas é \textbf{aditivo} se os mapas $F:\operatorname{Hom}(A,B)\rightarrow \operatorname{Hom}(F(A),F(B))$ são homomorfismos de grupos. 
+
+\begin{pro}
+	Numa categoria pre-aditiva, tudo produto finito é um coproduto, e vice-versa (chamado de \textbf{biproduto}). 
+\end{pro}
+
+Uma \textbf{categoria aditiva} é uma categoria pre-aditiva que admite biprodutos finitos. Em particular, os biprodutos vazios são objetos zero.\\
+
+Uma \textbf{categoria abeliana} é uma categoria aditiva tal que:
+\begin{enumerate}
+	\item Todo morfismo possui núcleo e conúcelo,
+	\item todo monomorfismo (resp. epimorfismo) é o kernel (resp. cokernel) de um morfismo.
+\end{enumerate}
+
+
+Um \textbf{complexo} numa categoria aditiva $\mathcal{C}$ é uma sequência de objetos $\{X_j\}$
+
+\section{Objetos projetivos e injetivos}
+
+Um objeto $Q$ numa categoria é \textbf{injetivo} se para todo monomorfismo $f:X\rightarrow Y$ e todo morfismo $g:X \rightarrow Q$ existe um morfismo $h: Y\rightarrow Q$ tal que $h\circ f =g$.\\
+Uma categoria \textbf{tem suficientes injetivos} se para todo objeto $X$ existe um monomorfismo $X\rightarrow Q$, com $Q$ injetivo.
+
+
+Um objeto $P$ numa categoria é \textbf{injetivo} se para todo epimorfismo $e:E\rightarrow X$ e todo morfismo $f:P \rightarrow X$ existe um morfismo $h: P\rightarrow E$ tal que $e\circ h =f$.\\
+Uma categoria \textbf{tem suficientes projetivos} se para todo objeto $A$ existe um epimorfismo $P\rightarrow A$, com $P$ projetivo.
+
+\begin{pro}
+	Numa categoria abeliana, 
+	\begin{itemize}
+		\item um objeto é injetivo se e somente se $\operatorname{Hom}(\cdot , Q)$ é exato
+		\item um objeto é projetivo se e somente se $\operatorname{Hom}(\cdot , Q)$ é exato.
+	\end{itemize}
+\end{pro}
+
+
+
+\subsection{Resoluciones}
+
+
+\section{Categoría Trianguladas}
+
+
+
+\subsection{La categoría homotópica}
+
+
+
+
+
+\section{Categorías derivadas}
+
+
+
+
+
+
+
+\chapter{Complejos en Categorías aditivas}
+
+
+
+\chapter{Los funtores Ext y Tor}
+
+\begin{teo}[Serre]
+Sea $(A, \mathfrak{m},k)$ noetheriano regular, tenemos que $A_\mathfrak{p}$ es regular para todo $\mathfrak{p} \in \operatorname{Spec}A$.
+\end{teo}
+
+\begin{teo}[Auslander-Buchsbaum]
+Todo $(A, \mathfrak{m},k)$ noetheriano regular es un DFU.
+\end{teo}
+
+
+\begin{cor}
+Todo dominio noetheriano regular es normal.
+\end{cor}
+
+
+
+\section{Cohen-Macaulay}
+
+\section{Condición Gorenstein}
+
+
+
+\chapter{Sequencias espectrales}
+
+
+
+
+
+\part{K-Teoría}
+
+\chapter{sdfs}
+
+
+\end{document}
+
+
