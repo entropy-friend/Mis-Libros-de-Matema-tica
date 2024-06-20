@@ -1,6 +1,6 @@
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[english]{babel}
 \usepackage[a4paper, total={7in, 10in}]{geometry}
 \usepackage{charter}
 \usepackage{amsmath}
@@ -28,7 +28,7 @@
 \newcommand{\mm}{\mathfrak{m}}
 \begin{document}
 \large
-\title{Álgebra Conmutativa}	
+\title{Conmutative and Homological Algebra}	
 	\author{Abraham Rojas}
 	\date{ }
 	
@@ -46,32 +46,31 @@
 \chapter{Ideales y módulos en anillos conmutativos}
 
 %modulos generalizan a los ideales
-Sea $A$ un anillo conmutativo (con unidad). tengo miedo de las cosas que tienes que decirme, hbjhvjhvjbjhbjhvjhv sdfgoijdsofg esos sdofijsdofhasodihfladhsfasilduhf \\
-hya otras cosas que trato de hacer pero siempre me entretienes.
-%
-%Un \textbf{ideal} es un subconjunto no vacío $I$ de $A$ tal que 
-%\begin{enumerate}
-%\item es cerrado por la adición (em particular $0\in A$),
-%\item si $a\in A$ y $x\in I$ entonces $ax\in I$.
-%\end{enumerate}
-%
-%Un ideal \textbf{propio} es un ideal de $A$ que no contiene invertibles.
-%
-%\begin{ex}
-%Un ideal es propio si y solo si es distinto de $A$.
-%\end{ex}
-%
-%Dada una familia $\{b_\lambda\}_\Lambda$ de elementos de $A$, el \textbf{ideal generado} por estos elementos es definido como el conjunto las \textit{combinaciones lineales} de estos, i.e.,
-%
-%$$  a_1 b_{\lambda_1} + \cdots + a_r b_{\lambda_r},  r \in \mathbb{N} , a_i \in A , \lambda_i \in \Lambda.  $$
-%
-%El ideal generado por $a_1, \ldots , a_r \in A $ será denotado por $(a_1, \ldots , a_r)$. Ideales generados por un único elemento son llamados \textbf{principales}.
-%
-%\begin{ex}
-%El núcleo de un morfismo de anillos (conmutativos) es un ideal del dominio.
-%\end{ex}
-%
-%Dados dos ideales $I$ y $J$ de $A$, definimos el \textbf{producto} de estos como $$ I J = \{a_1 b_{\lambda_1} + \cdots + a_r b_{\lambda_r},  r \in \mathbb{N} , a_i \in I , b_i \in J\}. $$
+Let $A$ be a Conmutative ring with identity.
+
+Un \textbf{ideal} es un subconjunto no vacío $I$ de $A$ tal que 
+\begin{enumerate} 
+\item es cerrado por la adición (em particular $0\in A$),
+\item si $a\in A$ y $x\in I$ entonces $ax\in I$.
+\end{enumerate}
+
+Un ideal \textbf{propio} es un ideal de $A$ que no contiene invertibles.
+
+\begin{ex}
+Un ideal es propio si y solo si es distinto de $A$.
+\end{ex}
+
+Dada una familia $\{b_\lambda\}_\Lambda$ de elementos de $A$, el \textbf{ideal generado} por estos elementos es definido como el conjunto las \textit{combinaciones lineales} de estos, i.e.,
+
+$$  a_1 b_{\lambda_1} + \cdots + a_r b_{\lambda_r},  r \in \mathbb{N} , a_i \in A , \lambda_i \in \Lambda.  $$
+
+El ideal generado por $a_1, \ldots , a_r \in A $ será denotado por $(a_1, \ldots , a_r)$. Ideales generados por un único elemento son llamados \textbf{principales}.
+
+\begin{ex}
+El núcleo de un morfismo de anillos (conmutativos) es un ideal del dominio.
+\end{ex}
+
+Dados dos ideales $I$ y $J$ de $A$, definimos el \textbf{producto} de estos como $$ I J = \{a_1 b_{\lambda_1} + \cdots + a_r b_{\lambda_r},  r \in \mathbb{N} , a_i \in I , b_i \in J\}. $$
 
 El \textbf{radical} de $I$ es definido como $$ \sqrt (I) = {a \in A \; | \; a^n \in I \mbox{ para algun }n\in \mathbb{N} } .$$
 
